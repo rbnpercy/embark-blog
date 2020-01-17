@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/configuration.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/configuration.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/configuration.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/configuration.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -767,7 +769,7 @@ svg4everybody();
           <p>Embark offers a lot of fine control when it comes to configuring the different parts of our decentralized application. In this guide we’ll take a closer look at the basic configuration options provided by our application’s <code>embark.json</code> file, which are mainly relevant for, but not restricted to, our application structure.</p>
 <p>For configuration options related to connecting to a blockchain client, <a href="contracts_configuration.html">deploying your Smart Contracts</a>, <a href="storage_configuration.html">decentralized storage</a>, <a href="messages_configuration">Whisper</a> or <a href="naming_configuration.html">ENS</a>, please head over to the dedicated configuration guides respectively.</p>
 <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>Every application <a href="create_project.html">created with Embark</a> comes with an <code>embark.json</code> file. This file configures where Embark has to look for Smart Contract files and assets, as well as plugins options. Here’s what a freshly scaffolded <code>embark.json</code> file could look like:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;contracts&quot;: [&quot;contracts/**&quot;],</span><br><span class="line">  &quot;app&quot;: &#123;</span><br><span class="line">    &quot;js/dapp.js&quot;: [&quot;app/dapp.js&quot;],</span><br><span class="line">    &quot;index.html&quot;: &quot;app/index.html&quot;,</span><br><span class="line">    &quot;images/&quot;: [&quot;app/images/**&quot;]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;buildDir&quot;: &quot;dist/&quot;,</span><br><span class="line">  &quot;generationDir&quot;: &quot;embarkArtifacts&quot;,</span><br><span class="line">  &quot;config&quot;: &quot;config/&quot;,</span><br><span class="line">  &quot;versions&quot;: &#123;</span><br><span class="line">    &quot;solc&quot;: &quot;0.4.25&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;plugins&quot;: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;options&quot;: &#123;</span><br><span class="line">    &quot;solc&quot;: &#123;</span><br><span class="line">      &quot;optimize&quot;: true,</span><br><span class="line">      &quot;optimize-runs&quot;: 200</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;contracts&quot;: [&quot;contracts&#x2F;**&quot;],</span><br><span class="line">  &quot;app&quot;: &#123;</span><br><span class="line">    &quot;js&#x2F;dapp.js&quot;: [&quot;app&#x2F;dapp.js&quot;],</span><br><span class="line">    &quot;index.html&quot;: &quot;app&#x2F;index.html&quot;,</span><br><span class="line">    &quot;images&#x2F;&quot;: [&quot;app&#x2F;images&#x2F;**&quot;]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;buildDir&quot;: &quot;dist&#x2F;&quot;,</span><br><span class="line">  &quot;generationDir&quot;: &quot;embarkArtifacts&quot;,</span><br><span class="line">  &quot;config&quot;: &quot;config&#x2F;&quot;,</span><br><span class="line">  &quot;versions&quot;: &#123;</span><br><span class="line">    &quot;solc&quot;: &quot;0.4.25&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;plugins&quot;: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;options&quot;: &#123;</span><br><span class="line">    &quot;solc&quot;: &#123;</span><br><span class="line">      &quot;optimize&quot;: true,</span><br><span class="line">      &quot;optimize-runs&quot;: 200</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Let’s look at the different options and learn what they do and mean.</p>
 <h3 id="contracts"><a href="#contracts" class="headerlink" title="contracts"></a>contracts</h3><p>This is a list of directories in which Embark should look for Smart Contract files. These typically are globbing patterns (e.g <code>[&quot;contracts/**/*.sol&quot;]</code> will match all sol files inside any folders inside <code>contracts/</code>).</p>
@@ -814,7 +816,7 @@ svg4everybody();
 <li><strong>files</strong> - A list of files Embark should remove as well when resetting the project</li>
 </ul>
 <p>With these two options we have full control over what files <code>reset</code> will remove.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">  &quot;options&quot;: &#123;</span><br><span class="line">    &quot;reset&quot;: &#123;</span><br><span class="line">      &quot;defaults&quot;: true,</span><br><span class="line">      &quot;files&quot;: [&quot;some/other/file&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">  &quot;options&quot;: &#123;</span><br><span class="line">    &quot;reset&quot;: &#123;</span><br><span class="line">      &quot;defaults&quot;: true,</span><br><span class="line">      &quot;files&quot;: [&quot;some&#x2F;other&#x2F;file&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
         </div>
         <div class="o-container-medium o-distance-l">
@@ -852,79 +854,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -937,7 +886,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

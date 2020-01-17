@@ -2,548 +2,569 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://embark.status.im/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/troubleshooting.html</loc>
     
-    <lastmod>2019-12-05T23:24:54.227Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.494Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/using_storages.html</loc>
+    <loc>https://embark.embarklabs.io/docs/overview.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.492Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/templates/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/installation.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.491Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/plugins/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/create_project.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.490Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/contributing.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.490Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/working_with_name_systems.html</loc>
+    <loc>https://embark.embarklabs.io/docs/blockchain_configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.487Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/what_dapp.html</loc>
+    <loc>https://embark.embarklabs.io/docs/bamboo.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.486Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/webpack.html</loc>
+    <loc>https://embark.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.273Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/web3js.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/07/23/whats-new-in-embark-4.1/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.272Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/vyper.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.272Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/using_the_console.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/03/18/upgrading-to-embark-4/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.271Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/tutorials/infura_guide.html</loc>
+    <loc>https://embark.embarklabs.io/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.269Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/plugin_reference.html</loc>
+    <loc>https://embark.embarklabs.io/news/2018/05/04/embark-3-0-released/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.269Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/troubleshooting.html</loc>
+    <loc>https://embark.embarklabs.io/news/2018/10/27/how-to-create-a-token-factory-with-embark-part-2/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T21:12:06.269Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/quick_start.html</loc>
+    <loc>https://embark.embarklabs.io/news/2020/01/09/take-back-the-web-hackathon/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.418Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/sending_and_receiving_messages.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/smart_contract_objects.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/running_apps.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/solidity.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/storage_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/03/19/introducing-embark-4/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/storage_deployment.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/storage_javascript.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/02/04/building-a-decentralized-reddit-with-embark-part-1/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/structure.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/01/23/building-smart-contract-only-dapps/</loc>
     
-    <lastmod>2019-12-05T23:18:26.101Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_debugger.html</loc>
+    <loc>https://embark.embarklabs.io/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_deployment.html</loc>
+    <loc>https://embark.embarklabs.io/news/2018/06/20/embark-3-1-released/</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_editor.html</loc>
+    <loc>https://embark.embarklabs.io/news/2017/06/28/embark-2-5-released/</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.382Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_explorer.html</loc>
+    <loc>https://embark.embarklabs.io/news/2017/10/25/embark-2-6-released/</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.382Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_introduction.html</loc>
+    <loc>https://embark.embarklabs.io/tutorials/infura_guide.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_utils.html</loc>
+    <loc>https://embark.embarklabs.io/docs/working_with_name_systems.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/what_dapp.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/console_commands.html</loc>
+    <loc>https://embark.embarklabs.io/docs/webpack.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contracts_deployment.html</loc>
+    <loc>https://embark.embarklabs.io/docs/web3js.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contracts_imports.html</loc>
+    <loc>https://embark.embarklabs.io/docs/vyper.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contracts_javascript.html</loc>
+    <loc>https://embark.embarklabs.io/docs/using_the_console.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/create_project.html</loc>
+    <loc>https://embark.embarklabs.io/docs/using_storages.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/creating_plugins.html</loc>
+    <loc>https://embark.embarklabs.io/docs/plugin_reference.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/dashboard.html</loc>
+    <loc>https://embark.embarklabs.io/templates/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/embark_commands.html</loc>
+    <loc>https://embark.embarklabs.io/docs/creating_plugins.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/environments.html</loc>
+    <loc>https://embark.embarklabs.io/docs/dashboard.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contributing.html</loc>
+    <loc>https://embark.embarklabs.io/docs/embark_commands.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/index.html</loc>
+    <loc>https://embark.embarklabs.io/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/installation.html</loc>
+    <loc>https://embark.embarklabs.io/docs/faq.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/installing_embarkjs.html</loc>
+    <loc>https://embark.embarklabs.io/docs/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/installing_plugins.html</loc>
+    <loc>https://embark.embarklabs.io/plugins/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/javascript_usage.html</loc>
+    <loc>https://embark.embarklabs.io/docs/installing_embarkjs.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/messages_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/installing_plugins.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/messages_javascript.html</loc>
+    <loc>https://embark.embarklabs.io/docs/javascript_usage.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/migrating_from_3.x.html</loc>
+    <loc>https://embark.embarklabs.io/docs/messages_configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/naming_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/messages_javascript.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/naming_javascript.html</loc>
+    <loc>https://embark.embarklabs.io/docs/migrating_from_3.x.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/overview.html</loc>
+    <loc>https://embark.embarklabs.io/docs/naming_configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/pipeline_and_webpack.html</loc>
+    <loc>https://embark.embarklabs.io/docs/naming_javascript.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contracts_testing.html</loc>
+    <loc>https://embark.embarklabs.io/news/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/blockchain_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/pipeline_and_webpack.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/faq.html</loc>
+    <loc>https://embark.embarklabs.io/docs/quick_start.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/contracts_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/running_apps.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/chat/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/sending_and_receiving_messages.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/community/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/smart_contract_objects.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/bamboo.html</loc>
+    <loc>https://embark.embarklabs.io/docs/solidity.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/blockchain_accounts_configuration.html</loc>
+    <loc>https://embark.embarklabs.io/docs/storage_configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/docs/cockpit_dashboard.html</loc>
+    <loc>https://embark.embarklabs.io/docs/storage_deployment.html</loc>
     
-    <lastmod>2019-12-05T23:18:26.097Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/02/04/building-a-decentralized-reddit-with-embark-part-1/</loc>
+    <loc>https://embark.embarklabs.io/docs/storage_javascript.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/01/23/building-smart-contract-only-dapps/</loc>
+    <loc>https://embark.embarklabs.io/docs/structure.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/</loc>
+    <loc>https://embark.embarklabs.io/docs/environments.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_debugger.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/03/18/upgrading-to-embark-4/</loc>
+    <loc>https://embark.embarklabs.io/docs/contracts_imports.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/</loc>
+    <loc>https://embark.embarklabs.io/docs/contracts_deployment.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
+    <loc>https://embark.embarklabs.io/docs/console_commands.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
+    <loc>https://embark.embarklabs.io/docs/configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2018/10/27/how-to-create-a-token-factory-with-embark-part-2/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_utils.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/07/23/whats-new-in-embark-4.1/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_introduction.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/03/19/introducing-embark-4/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_explorer.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/</loc>
+    <loc>https://embark.embarklabs.io/docs/contracts_javascript.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.941Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_deployment.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.937Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2017/10/25/embark-2-6-released/</loc>
+    <loc>https://embark.embarklabs.io/docs/cockpit_dashboard.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.937Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2018/06/20/embark-3-1-released/</loc>
+    <loc>https://embark.embarklabs.io/docs/blockchain_accounts_configuration.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.937Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2018/05/04/embark-3-0-released/</loc>
+    <loc>https://embark.embarklabs.io/community/index.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.937Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.status.im/news/2017/06/28/embark-2-5-released/</loc>
+    <loc>https://embark.embarklabs.io/docs/contracts_testing.html</loc>
     
-    <lastmod>2019-12-05T23:18:25.937Z</lastmod>
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/chat/index.html</loc>
+    
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/docs/contracts_configuration.html</loc>
+    
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/docs/cockpit_editor.html</loc>
+    
+    <lastmod>2020-01-17T19:00:03.896Z</lastmod>
     
   </url>
   

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/index.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -160,7 +162,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -181,13 +183,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -261,7 +263,6 @@ svg4everybody();
 <p>A Crystal program executes in a single operating system thread, except the Garbage Collector (GC) which implements a concurrent mark-and-sweep (currently Boehm GC).</p>
 <h3 id="Crystal-Concurrency-Primitives"><a href="#Crystal-Concurrency-Primitives" class="headerlink" title="Crystal Concurrency Primitives"></a>Crystal Concurrency Primitives</h3><p>In Crystal, we can use the <code>Spawn</code> functionality in a very similar way to Goroutines in Golang, core.async in Clojure, or the threading in Nim.  When a program starts, it fires up a main <code>Fiber</code> that will execute your top-level code, from which we can spawn many other <code>Fibers</code>.</p>
 <p><code>Fibers</code> are lightweight threads of execution that are managed by the garbage collector, so you don’t <em>really</em> need to worry about managing them once you’ve spawned them.  Because of this, you could technically spin up 100 <code>Fibers</code> to make a bunch of API requests, and then simply forget about them.</p>
-<p>You <em>could</em> do this with OS threads, but <code>pthread_create</code> and <code>pthread_join</code> (the <code>libc</code> functions that usually back threads) are expensive system calls, so you really shouldn’t.</p>
 <p>We can utilise <code>Spawn</code> in Crystal like so:</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">"socket"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load</span></span>(id, chan)</span><br><span class="line">  puts <span class="string">"ID=<span class="subst">#&#123;id&#125;</span>; START"</span></span><br><span class="line">  (id..<span class="number">11</span>).each <span class="keyword">do</span></span><br><span class="line">    socket = TCPSocket.new(<span class="string">"http://robin.percy.pw"</span>, <span class="number">80</span>)</span><br><span class="line">    socket.close</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  puts <span class="string">"ID=<span class="subst">#&#123;id&#125;</span>; FINISH"</span></span><br><span class="line">  chan.send <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span></span></span><br><span class="line">  chan = Channel(Nil).new</span><br><span class="line">  (<span class="number">1</span>..<span class="number">10</span>).each&#123;|i| spawn(load(i,chan))&#125;</span><br><span class="line">  <span class="comment"># Wait</span></span><br><span class="line">  (<span class="number">1</span>..<span class="number">10</span>).each&#123;chan.receive&#125;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">main</span><br></pre></td></tr></table></figure>
 
@@ -295,13 +296,13 @@ svg4everybody();
 
 <h2 id="Built-in-Tooling-in-Crystal"><a href="#Built-in-Tooling-in-Crystal" class="headerlink" title="Built-in Tooling in Crystal"></a>Built-in Tooling in Crystal</h2><p>One of the things I like most about Crystal is the excellent built-in tooling available. When I look at new languages, especially relatively immature languages; it’s always very reassuring when the language has extensive built-in tooling available to help developers stay productive &amp; happy! In Crystal, there are a bunch of tools that make hacking around in the language super fun, but also help us to stay on the right track with semantics etc.</p>
 <h3 id="Crystal-Project-Packaging"><a href="#Crystal-Project-Packaging" class="headerlink" title="Crystal Project Packaging"></a>Crystal Project Packaging</h3><p>Much the same as the Nimble package manager, <strong><em>although not as good in my opinion,</em></strong> Crystal has it’s own built-in project scaffolder &amp; package manager. I’d recommend using this at all times to ensure semantics are followed. We can use it with the following:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ crystal init lib my_app</span><br><span class="line">      create  my_app/.gitignore</span><br><span class="line">      create  my_app/LICENSE</span><br><span class="line">      create  my_app/README.md</span><br><span class="line">      create  my_app/.travis.yml</span><br><span class="line">      create  my_app/shard.yml</span><br><span class="line">      create  my_app/src/my_app</span><br><span class="line">      create  my_app/src/my_app/version.cr</span><br><span class="line">      create  my_app/spec/spec_helper.cr</span><br><span class="line">      create  my_app/spec/my_app_spec.cr</span><br><span class="line">Initialized empty Git repository in ~/my_app/.git/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ crystal init lib my_app</span><br><span class="line">      create  my_app&#x2F;.gitignore</span><br><span class="line">      create  my_app&#x2F;LICENSE</span><br><span class="line">      create  my_app&#x2F;README.md</span><br><span class="line">      create  my_app&#x2F;.travis.yml</span><br><span class="line">      create  my_app&#x2F;shard.yml</span><br><span class="line">      create  my_app&#x2F;src&#x2F;my_app</span><br><span class="line">      create  my_app&#x2F;src&#x2F;my_app&#x2F;version.cr</span><br><span class="line">      create  my_app&#x2F;spec&#x2F;spec_helper.cr</span><br><span class="line">      create  my_app&#x2F;spec&#x2F;my_app_spec.cr</span><br><span class="line">Initialized empty Git repository in ~&#x2F;my_app&#x2F;.git&#x2F;</span><br></pre></td></tr></table></figure>
 
 <p><code>Shards</code> are Crystal’s packages; distributed in the same way as Ruby Gems, Elixir Libs or Golang packages. Each application we create contains a file in the root directory named shard.yml. This file contains project details and external dependencies. The shard.yml file in the <code>my_app</code> app above looks like this:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">my_app</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">0.1</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">authors:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">Robin</span> <span class="string">Percy</span> <span class="string">&lt;robin@percy.pw&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">targets:</span></span><br><span class="line"><span class="attr">  sayhi_c:</span></span><br><span class="line"><span class="attr">    main:</span> <span class="string">src/my_app.cr</span></span><br><span class="line"></span><br><span class="line"><span class="attr">crystal:</span> <span class="number">0.31</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">license:</span> <span class="string">MIT</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">my_app</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">0.1</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">authors:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Robin</span> <span class="string">Percy</span> <span class="string">&lt;robin@percy.pw&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">targets:</span></span><br><span class="line">  <span class="attr">sayhi_c:</span></span><br><span class="line">    <span class="attr">main:</span> <span class="string">src/my_app.cr</span></span><br><span class="line"></span><br><span class="line"><span class="attr">crystal:</span> <span class="number">0.31</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">license:</span> <span class="string">MIT</span></span><br></pre></td></tr></table></figure>
 
 <p>The app I built has no dependencies to use, but if we want to include external packages we can do so by adding them at the bottom of the file:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line"><span class="attr">  github:</span></span><br><span class="line"><span class="attr">    github:</span> <span class="string">felipeelias/crystal-github</span></span><br><span class="line"><span class="attr">    version:</span> <span class="string">~&gt;</span> <span class="number">0.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">github:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">felipeelias/crystal-github</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">~&gt;</span> <span class="number">0.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Documentation-amp-Formatting"><a href="#Documentation-amp-Formatting" class="headerlink" title="Documentation &amp; Formatting"></a>Documentation &amp; Formatting</h3><p>Crystal has a great built-in tool for generating documentation and formatting files. The documentation that is generated is excellent - built-in html/css and almost instantly ready to deploy.</p>
 <p>To generate documentation, from the project root directory we can simply run:</p>
@@ -365,79 +366,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -450,7 +398,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/storage_javascript.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/storage_javascript.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/storage_javascript.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/storage_javascript.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -766,32 +768,32 @@ svg4everybody();
           <h1>Storage APIs in JavaScript</h1>
           <p>As mentioned in our guide on <a href="/docs/javascript_usage.html">Using EmbarkJS</a>, Embark’s companion JavaScript library EmbarkJS comes with APIs specifically designed to make working with decentralized Storages a breeze. Let’s a have closer look at what <code>EmbarkJS.Storage</code> has to offer.</p>
 <h2 id="Setting-up-EmbarkJS"><a href="#Setting-up-EmbarkJS" class="headerlink" title="Setting up EmbarkJS"></a>Setting up EmbarkJS</h2><p>By default Embark will automatically initialize EmbarkJS with the provider configured at <code>config/storage.js</code>. However if we are using EmbarkJS directly or wish to change the provider configuration at run time, we can do so using the <code>setProvider()</code> method:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.setProvider(&apos;swarm&apos;, options);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.setProvider(&#39;swarm&#39;, options);</span><br></pre></td></tr></table></figure>
 
 <p>Options are optional and if provided, will override the values in <code>storage.js</code>. Here’s what a manual configuration could look like:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.setProvider(&apos;ipfs&apos;, &#123;</span><br><span class="line">  server: &apos;localhost&apos;,</span><br><span class="line">  port: &apos;5001&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// OR</span><br><span class="line"></span><br><span class="line">EmbarkJS.Storage.setProvider(&apos;swarm&apos;, &#123;</span><br><span class="line">  server: &apos;swarm-gateways.net&apos;,</span><br><span class="line">  port: &apos;80&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.setProvider(&#39;ipfs&#39;, &#123;</span><br><span class="line">  server: &#39;localhost&#39;,</span><br><span class="line">  port: &#39;5001&#39;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; OR</span><br><span class="line"></span><br><span class="line">EmbarkJS.Storage.setProvider(&#39;swarm&#39;, &#123;</span><br><span class="line">  server: &#39;swarm-gateways.net&#39;,</span><br><span class="line">  port: &#39;80&#39;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Saving-text-data"><a href="#Saving-text-data" class="headerlink" title="Saving text data"></a>Saving text data</h2><p>String data can be easily uploaded to the configured storage using <code>EmbarkJS.Storage.saveText()</code>. This method takes any string and returns a Promise that resolves with a storage hash that can then be used to retrieve the data:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage</span><br><span class="line">  .saveText(&quot;hello world&quot;).then(hash =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage</span><br><span class="line">  .saveText(&quot;hello world&quot;).then(hash &#x3D;&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Retrieving-text-data"><a href="#Retrieving-text-data" class="headerlink" title="Retrieving text data"></a>Retrieving text data</h2><p>If we happen to have a storage hash, we can use to to retrieve the data that’s associated to it using <code>EmbarkJS.Storage.get()</code> as shown below. Just like <code>saveText()</code> this method returns a Promise and resolves with the data the hash points to:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.get(hash).then(content =&gt;  &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.get(hash).then(content &#x3D;&gt;  &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Upload-binary-data"><a href="#Upload-binary-data" class="headerlink" title="Upload binary data"></a>Upload binary data</h2><p>We can upload files as binary data using EmbarkJS as well. All we need is a reference to a DOM object of type <code>input[type=file]</code> and pass it the <code>uploadFile()</code> method. So assuming we had an input that looked something like this:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;file&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>We can upload its data like this: </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const input = document.querySelector(&apos;input[type=file&quot;]&apos;);</span><br><span class="line"></span><br><span class="line">EmbarkJS.Storage.uploadFile(input).then(hash =&gt; &#123;</span><br><span class="line">  ...    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const input &#x3D; document.querySelector(&#39;input[type&#x3D;file&quot;]&#39;);</span><br><span class="line"></span><br><span class="line">EmbarkJS.Storage.uploadFile(input).then(hash &#x3D;&gt; &#123;</span><br><span class="line">  ...    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>Similar to <code>saveText()</code> and <code>get()</code>, this method returns a Promise and can be used with JavaScript’s <code>async/await</code> syntec as well.</p>
 <h2 id="Display-data-using-URLs"><a href="#Display-data-using-URLs" class="headerlink" title="Display data using URLs"></a>Display data using URLs</h2><p>To display any uploaded data in the browser, we can request a fully qualified URL using <code>EmbarkJS.Storage.getUrl()</code> and a dedicated storage hash:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.getUrl(hash).then(url =&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.getUrl(hash).then(url &#x3D;&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Checking-for-storage-provider-availability"><a href="#Checking-for-storage-provider-availability" class="headerlink" title="Checking for storage provider availability"></a>Checking for storage provider availability</h2><p>We can check whether our configured storage provider is available or not using <code>isAvailable()</code>. This method resolves with either <code>true</code> or <code>false</code> depending on whether the service is available:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.isAvailable().then(isAvailable =&gt; &#123; </span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.isAvailable().then(isAvailable &#x3D;&gt; &#123; </span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="IPNS-registration"><a href="#IPNS-registration" class="headerlink" title="IPNS registration"></a>IPNS registration</h2><p>We can register IPFS hashes using IPNS using the <code>register()</code> method has shown below:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.register(some_hash).then(name =&gt; &#123;</span><br><span class="line">  console.log(&apos;Registred: &apos;, name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EmbarkJS.Storage.register(some_hash).then(name &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;Registred: &#39;, name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <div class="c-notification c-notification--info">
   <p><strong>Note on registering hashes:</strong></p>
@@ -841,79 +843,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -926,7 +875,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

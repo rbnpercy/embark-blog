@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/index.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -160,7 +162,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -181,13 +183,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -239,16 +241,16 @@ svg4everybody();
     <p>In this tutorial series we’ll create a Token Factory using Ethereum. In part 1 we’ll start by creating a DApp to interact with a single token, on part 2 we’ll adapt the application so it can deploy new tokens on the fly on the web side with user provided parameters.</p>
 <p>A Token is typically a unit used to represent a medium of exchange for some service or utility. They can represent a concert ticket, a membership, voting share, reputation points, etc…</p>
 <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>First of all, make sure you have <a href="https://geth.ethereum.org/" target="_blank" rel="noopener">Go-Ethereum</a> and Embark installed.</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10c58bd0-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10c58bd0-17b6-11ea-b767-2bd413af9dbd">$ npm -g install embark</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-6609b740-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-6609b740-396e-11ea-8e1c-59cdbb66bc35">$ npm -g install embark</code></pre>
 
 
 <p>Now, let’s create a new dapp</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10dfa380-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10dfa380-17b6-11ea-b767-2bd413af9dbd">$ embark new TokenFactory</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660dfd00-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660dfd00-396e-11ea-8e1c-59cdbb66bc35">$ embark new TokenFactory</code></pre>
 
 
 
 <p>This will create a directory called TokenFactory, cd to it and run:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e71d90-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e71d90-17b6-11ea-b767-2bd413af9dbd">$ embark run</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660ec050-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660ec050-396e-11ea-8e1c-59cdbb66bc35">$ embark run</code></pre>
 
 
 <p>In another console, in the same directory, run:</p>
@@ -266,7 +268,7 @@ svg4everybody();
 <p>Now open your browser at <a href="http://localhost:8000" target="_blank" rel="noopener">http://localhost:8000</a> , start your favourite editor and let’s get started!</p>
 <h2 id="Adding-the-Token-Contract"><a href="#Adding-the-Token-Contract" class="headerlink" title="Adding the Token Contract"></a>Adding the Token Contract</h2><p>We’ll add a typical ERC20 token contract to contracts/token.sol</p>
 <p><em>warning: this contract is for educational purposes only, do not use it in production unless you know what you are doing</em></p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e96780-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e96780-17b6-11ea-b767-2bd413af9dbd">pragma solidity ^0.4.23;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660f5c90-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660f5c90-396e-11ea-8e1c-59cdbb66bc35">pragma solidity ^0.4.23;
 
 contract Token {
 
@@ -329,10 +331,10 @@ contract Token {
 <p>Once added, Embark will automatically detect the new file and deploy the contract. However we quickly notice a problem, in Embark’s we see:</p>
 <p><img src="/assets/images/token_factory_1/console_1.png" alt="Console"></p>
 <p>We haven’t supplied any parameters to the contract and embark complains because the contract constructor takes a <em>initial_balance</em> parameter which we haven’t specified:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">constructor(uint initial_balance) public &#123;</span><br><span class="line">    _balances[msg.sender] = initial_balance;</span><br><span class="line">    _supply = initial_balance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">constructor(uint initial_balance) public &#123;</span><br><span class="line">    _balances[msg.sender] &#x3D; initial_balance;</span><br><span class="line">    _supply &#x3D; initial_balance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Let’s rectify this by specifying the <em>initial_balance</em> value in <code>config/contracts.js</code></p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e98e90-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e98e90-17b6-11ea-b767-2bd413af9dbd">module.exports = {
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660f83a1-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660f83a1-396e-11ea-8e1c-59cdbb66bc35">module.exports = {
   default: {
     // .....
     gas: &quot;auto&quot;,
@@ -351,13 +353,13 @@ contract Token {
 
 <p>Embark will detect the change and redeploy the contract with the new parameters.</p>
 <p>You can confirm that the token supply is 1000 by typing:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e98e93-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e98e93-17b6-11ea-b767-2bd413af9dbd">$ Token.methods._supply().call(console.log)</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660f83a3-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660f83a3-396e-11ea-8e1c-59cdbb66bc35">$ Token.methods._supply().call(console.log)</code></pre>
 
 
 <p><img src="/assets/images/token_factory_1/console_2.png" alt="Console"></p>
 <h2 id="Creating-the-UI"><a href="#Creating-the-UI" class="headerlink" title="Creating the UI"></a>Creating the UI</h2><p>For the sake of brevity, we wouldn’t implement every single functionality in the contract. However, we’ll implement two important features: Checking balance of an address and Transferring Tokens from one address to another.</p>
 <h2 id="Checking-address-balance"><a href="#Checking-address-balance" class="headerlink" title="Checking address balance"></a>Checking address balance</h2><p>To input the address to query, we’ll edit <em>app/index.html</em> and add a simple form.</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e9b5a0-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e9b5a0-17b6-11ea-b767-2bd413af9dbd">&lt;html&gt;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660faab1-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660faab1-396e-11ea-8e1c-59cdbb66bc35">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Embark&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot;&gt;
@@ -376,16 +378,16 @@ contract Token {
 
 <p><strong>Adding jQuery</strong></p>
 <p>To simplify the code a bit in this tutorial, we’ll add the jQuery library to our DApp.</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e9b5a2-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e9b5a2-17b6-11ea-b767-2bd413af9dbd">$ npm install jquery@3 --save</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660faab2-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660faab2-396e-11ea-8e1c-59cdbb66bc35">$ npm install jquery@3 --save</code></pre>
 
 
 <p>Now edit the file <em>app/js/index.js</em> and add:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e9dcb0-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e9dcb0-17b6-11ea-b767-2bd413af9dbd">import $ from &#39;jquery&#39;;</code></pre>
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c0-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c0-396e-11ea-8e1c-59cdbb66bc35">import $ from &#39;jquery&#39;;</code></pre>
 
 
 <p><strong>Setting the default address</strong></p>
 <p>Let’s add to the input field field our own address as the default text so we can easily query our own balance. In the file <em>app/js/index.js</em> add:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e9dcb2-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e9dcb2-17b6-11ea-b767-2bd413af9dbd">import $ from &#39;jquery&#39;;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c1-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c1-396e-11ea-8e1c-59cdbb66bc35">import $ from &#39;jquery&#39;;
 import EmbarkJS from &#39;Embark/EmbarkJS&#39;;
 
 $(document).ready(function() {
@@ -409,14 +411,14 @@ $(document).ready(function() {
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function balanceOf( address who ) constant returns (uint value) &#123;</span><br><span class="line">  return _balances[who];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>This method will be available in the JS code automatically as a promise, like:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10e9dcb4-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10e9dcb4-17b6-11ea-b767-2bd413af9dbd">import Token from &#39;Embark/contracts/Token&#39;;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c2-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c2-396e-11ea-8e1c-59cdbb66bc35">import Token from &#39;Embark/contracts/Token&#39;;
 
 Token.methods.balanceOf(address).call().then(function(balance) { });</code></pre>
 
 
 
 <p>So we can simply add a click event to the button, get the address, query the balance and set the result.</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10ea03c0-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10ea03c0-17b6-11ea-b767-2bd413af9dbd">import $ from &#39;jquery&#39;;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c3-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c3-396e-11ea-8e1c-59cdbb66bc35">import $ from &#39;jquery&#39;;
 import EmbarkJS from &#39;Embark/EmbarkJS&#39;;
 import Token from &#39;Embark/contracts/Token&#39;;
 
@@ -447,7 +449,7 @@ $(document).ready(function() {
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function transfer( address to, uint value) returns (bool ok)</span><br></pre></td></tr></table></figure>
 
 <p>The method will take two parameters, an address and a value. Like in the previous step, let’s first add a simple form to the html page at <em>app/index.html</em>:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10ea2ad0-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10ea2ad0-17b6-11ea-b767-2bd413af9dbd">&lt;html&gt;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c4-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c4-396e-11ea-8e1c-59cdbb66bc35">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Embark&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot;&gt;
@@ -455,7 +457,7 @@ $(document).ready(function() {
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h3&gt;Welcome to Embark!&lt;/h3&gt;
-    &lt;p&gt;See the &lt;a href=&quot;https://github.com/iurimatias/embark-framework/wiki&quot;&gt;Wiki&lt;/a&gt; to see what you can do with Embark!&lt;/p&gt;
+    &lt;p&gt;See the &lt;a href=&quot;https://github.com/iurimatias/embarklabs/wiki&quot;&gt;Wiki&lt;/a&gt; to see what you can do with Embark!&lt;/p&gt;
 
     &lt;div id=&quot;queryBalance&quot;&gt;
       &lt;h3&gt;Query Balance&lt;/h3&gt;
@@ -475,7 +477,7 @@ $(document).ready(function() {
 
 
 <p>Then we will add the code to take the address and number of tokens from the inputs and call the contracts transfer method to <em>app/js/index.js</em>:</p>
-<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-10ea2ad1-17b6-11ea-b767-2bd413af9dbd"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-10ea2ad1-17b6-11ea-b767-2bd413af9dbd">import $ from &#39;jquery&#39;;
+<pre class="highlight "><button class="c-button c-button--squared" data-clipboard-target="#code-660fd1c5-396e-11ea-8e1c-59cdbb66bc35"><svg class="c-icon c-icon--xs"><use xlink:href="/assets/icons/symbols.svg#icon-copy-paste"></use></svg></button><code id="code-660fd1c5-396e-11ea-8e1c-59cdbb66bc35">import $ from &#39;jquery&#39;;
 import EmbarkJS from &#39;Embark/EmbarkJS&#39;;
 import Token from &#39;Embark/contracts/Token&#39;;
 
@@ -547,79 +549,26 @@ $(document).ready(function() {
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -632,7 +581,7 @@ $(document).ready(function() {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

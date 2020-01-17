@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/contracts_testing.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/contracts_testing.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/contracts_testing.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/contracts_testing.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -767,7 +769,7 @@ svg4everybody();
           <p>Testing is a crucial part of developing robust and high-quality software. That’s why Embark aims to make testing our Smart Contract as easy as possible. In this guide we’ll explore Embark specific testing APIs and how to write tests for our Smart Contracts.</p>
 <h2 id="Creating-tests"><a href="#Creating-tests" class="headerlink" title="Creating tests"></a>Creating tests</h2><p>Test files resides in a project’s <code>test</code> folder. Any JavaScript file within <code>test/</code> is considered a spec file and will be executed by Embark as such. A spec file contains test specs which are grouped in <code>contract()</code> functions. A single spec is written using <code>it()</code> blocks. </p>
 <p>Here’s what such a test could look like:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract(&apos;SomeContract&apos;, () =&gt; &#123;</span><br><span class="line">  it(&apos;should pass&apos;, () =&gt; &#123;</span><br><span class="line">    assert.ok(true);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract(&#39;SomeContract&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">  it(&#39;should pass&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">    assert.ok(true);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>This is a single test spec which will always pass. We’re using a globally available <code>assert</code> object to make assertions in our specs. If you’re familiar with the <a href="https://mochajs.org" target="_blank" rel="noopener">Mocha testing framework</a>, this syntax might be familiar. In fact, Embark uses Mocha as a test runner behind the scenes.</p>
 <p><code>contract()</code> is just an alias for Mocha’s <code>describe()</code> function and is globally available. In general, global functions and objects are:</p>
@@ -779,7 +781,7 @@ svg4everybody();
 <li>Mocha functions: <code>describe()</code>, <code>it()</code>, <code>before()</code>, etc.</li>
 </ul>
 <h3 id="Importing-EmbarkJS"><a href="#Importing-EmbarkJS" class="headerlink" title="Importing EmbarkJS"></a>Importing EmbarkJS</h3><p>If we want to use any of EmbarkJS’ APIs, we can require it as expected:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const EmbarkJS = require(&apos;Embark/EmbarkJS&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const EmbarkJS &#x3D; require(&#39;Embark&#x2F;EmbarkJS&#39;);</span><br></pre></td></tr></table></figure>
 
 <p>For more information on EmbarkJS’s APIs, head over to <a href="/docs/javascript_usage.html">this guide</a>.</p>
 <h2 id="Running-tests"><a href="#Running-tests" class="headerlink" title="Running tests"></a>Running tests</h2><p>Once we’ve written our tests, we can execute them using Embark’s <code>test</code> command:</p>
@@ -787,10 +789,10 @@ svg4everybody();
 
 <p>As mentioned earlier, this will pick up all files inside the <code>test/</code> folder and run them as test files.</p>
 <h3 id="Running-test-subsets"><a href="#Running-test-subsets" class="headerlink" title="Running test subsets"></a>Running test subsets</h3><p>If we aren’t interested in running all tests but only a specific subset, we can specify a test file as part of the <code>test</code> command like this:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ embark test test/SomeContract_spec.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ embark test test&#x2F;SomeContract_spec.js</span><br></pre></td></tr></table></figure>
 
 <h3 id="Running-tests-against-a-different-node"><a href="#Running-tests-against-a-different-node" class="headerlink" title="Running tests against a different node"></a>Running tests against a different node</h3><p>By default, tests are run using an Ethereum simulator (<a href="https://www.truffleframework.com/ganache" target="_blank" rel="noopener">Ganache</a>). We can use the <code>--node</code> option to change that behavior. Passing <code>--node embark</code> to <code>embark test</code> will use the Ethereum node associated with an already running embark process. We can also specify a custom endpoint, for example:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ embark test --node ws://localhost:8556</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ embark test --node ws:&#x2F;&#x2F;localhost:8556</span><br></pre></td></tr></table></figure>
 
 <h3 id="Outputting-gas-cost-details"><a href="#Outputting-gas-cost-details" class="headerlink" title="Outputting gas cost details"></a>Outputting gas cost details</h3><p>When running tests, we can even get an idea of what the gas costs of our Smart Contract deployments are. Embark comes with a <code>--gasDetails</code> option that makes this possible.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ embark test --gasDetails</span><br></pre></td></tr></table></figure>
@@ -799,7 +801,7 @@ svg4everybody();
 <p>The special thing with the <code>test</code> environment is that if you do not have a <code>test</code> section in your module configuration, that module with be disabled (<code>enabled: false</code>). This is done to speed up the test as if you don’t need a module, it is disabled.</p>
 <h2 id="Configuring-Smart-Contracts-for-tests"><a href="#Configuring-Smart-Contracts-for-tests" class="headerlink" title="Configuring Smart Contracts for tests"></a>Configuring Smart Contracts for tests</h2><p>Very similar to how we <a href="/docs/contracts_configuration.html">configure our Smart Contracts</a> for deployment, we have to configure them for our tests as well. This is important, so that our Smart Contracts get deployed with the correct testing data.</p>
 <p>To do that, Embark adds a global <code>config()</code> function to the execution context, which uses the same API as the configuration object for our application’s Smart Contracts. So if we had a <code>SomeContract</code> that should be picked up for deployment, this is what the configuration would look like:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  contracts: &#123;</span><br><span class="line">    deploy: &#123;</span><br><span class="line">      SomeContract: &#123;&#125; // options as discussed in Smart Contract configuration guide</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">contract(&apos;SomContract&apos;, () =&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  contracts: &#123;</span><br><span class="line">    deploy: &#123;</span><br><span class="line">      SomeContract: &#123;&#125; &#x2F;&#x2F; options as discussed in Smart Contract configuration guide</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">contract(&#39;SomContract&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>One thing that’s important to note here is that, behind the scenes, Embark has to run <code>config()</code> first to deploy the Smart Contracts and only <strong>then</strong> starts running tests. This will have an impact on the developer experience when importing Smart Contract instances within spec files. But more on that later.</p>
 <div class="c-notification c-notification--info">
@@ -812,7 +814,7 @@ svg4everybody();
 
 <h2 id="Accessing-Smart-Contract-instances"><a href="#Accessing-Smart-Contract-instances" class="headerlink" title="Accessing Smart Contract instances"></a>Accessing Smart Contract instances</h2><p>To write meaningful tests, we obviously want to interact with our Smart Contracts. As we know, <a href="/docs/javascript_usage.html#Embark-Artifacts">Embark generates Smart Contract instances</a> for us. All we have to do is importing and using them accordingly.</p>
 <p>The following code imports <code>SomeContract</code> and calls an imaginary method on it inside a spec:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const SomeContract = require(&apos;EmbarkJS/contracts/SomeContract&apos;);</span><br><span class="line"></span><br><span class="line">config(&#123;</span><br><span class="line">  contracts: &#123;</span><br><span class="line">    deploy: &#123;</span><br><span class="line">      SomeContract: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">contract(&apos;SomeContract&apos;, () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  it(&apos;should do something&apos;, async () =&gt; &#123;</span><br><span class="line">    const result = await SomeContract.methods.doSomething.call();</span><br><span class="line">    assert.equal(result, &apos;foo&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const SomeContract &#x3D; require(&#39;EmbarkJS&#x2F;contracts&#x2F;SomeContract&#39;);</span><br><span class="line"></span><br><span class="line">config(&#123;</span><br><span class="line">  contracts: &#123;</span><br><span class="line">    deploy: &#123;</span><br><span class="line">      SomeContract: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">contract(&#39;SomeContract&#39;, () &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">  it(&#39;should do something&#39;, async () &#x3D;&gt; &#123;</span><br><span class="line">    const result &#x3D; await SomeContract.methods.doSomething.call();</span><br><span class="line">    assert.equal(result, &#39;foo&#39;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>There’s one gotcha to keep in mind though. Looking at the snippet above, it seems like we can use <code>SmartContract</code> right away once it is imported. However, this is not actually true. As mentioned earlier, Embark first has to actually deploy our Smart Contracts and until that happens, all imported Smart Contract references are empty objects.</p>
 <p>This is not a problem anymore when using Smart Contract instances inside spec blocks, because we know that tests are executed after all Smart Contracts have been deployed. Embark will hydrate the imported references with actual data before the tests are run.</p>
@@ -825,17 +827,17 @@ svg4everybody();
 
 
 <h2 id="Configuring-accounts"><a href="#Configuring-accounts" class="headerlink" title="Configuring accounts"></a>Configuring accounts</h2><p>Accounts within the testing environment can be configured <a href="/docs/contracts_deployment.html">just like we’re used to</a>. The same rules apply here, and <a href="/docs/contracts_deployment.html#Configuring-account-balance-for-development">configuring an Ether balance</a> is supported as well. Configuring custom accounts in tests is especially useful if we want to use a specific account for our tests. </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  blockchain: &#123;</span><br><span class="line">    accounts: [</span><br><span class="line">      &#123;</span><br><span class="line">        privateKeyFile: &apos;path/to/file&apos;,</span><br><span class="line">        balance: &apos;42 shannon&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  blockchain: &#123;</span><br><span class="line">    accounts: [</span><br><span class="line">      &#123;</span><br><span class="line">        privateKeyFile: &#39;path&#x2F;to&#x2F;file&#39;,</span><br><span class="line">        balance: &#39;42 shannon&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Accessing-Accounts"><a href="#Accessing-Accounts" class="headerlink" title="Accessing Accounts"></a>Accessing Accounts</h2><p>Obviously, we want to access all configured accounts as well. Sometimes we want to test functions or methods that require us to specify a <code>from</code> address to send transactions from. For those cases we very likely want to access any of our our available accounts.</p>
 <p>All available accounts are emitted by <code>config()</code> and can be accessed using a callback parameter like this:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let accounts = [];</span><br><span class="line"></span><br><span class="line">config(&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;, (err, accounts) =&gt; &#123;</span><br><span class="line">  accounts = accounts;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let accounts &#x3D; [];</span><br><span class="line"></span><br><span class="line">config(&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;, (err, accounts) &#x3D;&gt; &#123;</span><br><span class="line">  accounts &#x3D; accounts;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>You can also grab the accounts from the callback of the <code>contract()</code> function (<code>describe</code> alias):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract(&apos;SomeContract&apos;, (accounts) =&gt; &#123;</span><br><span class="line">  const myAccounts = accounts[0];</span><br><span class="line"></span><br><span class="line">  it(&apos;should do something&apos;, async () =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract(&#39;SomeContract&#39;, (accounts) &#x3D;&gt; &#123;</span><br><span class="line">  const myAccounts &#x3D; accounts[0];</span><br><span class="line"></span><br><span class="line">  it(&#39;should do something&#39;, async () &#x3D;&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Connecting-to-a-different-node"><a href="#Connecting-to-a-different-node" class="headerlink" title="Connecting to a different node"></a>Connecting to a different node</h2><p>By default, Embark will use an internal VM to run the tests. However we can also specify a node to connect to and run the tests there, using the <code>host</code>, <code>port</code> and <code>type</code> options as shown below:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  blockchain: &#123;</span><br><span class="line">    &quot;endpoint&quot;: &quot;http://localhost:8545&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  blockchain: &#123;</span><br><span class="line">    &quot;endpoint&quot;: &quot;http:&#x2F;&#x2F;localhost:8545&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Configuring-modules"><a href="#Configuring-modules" class="headerlink" title="Configuring modules"></a>Configuring modules</h2><p>You can configure the different Embark modules directly in your test file. The available modules are: <a href="/docs/storage_configuration.html">storage</a>, <a href="/docs/naming_configuration.html">namesystem</a> and <a href="/docs/messages_configuration.html">communication</a>.</p>
 <p>All configuration options for the respective modules are available. Also, the configurations you put inside the <code>config</code> function are merged inside the ones that are in the configuration file (meaning that you don’t have to put all the provider options if they are already in the default configs).</p>
@@ -843,7 +845,7 @@ svg4everybody();
 
 <p>If the module is not started (eg. IPFS), Embark will start it for you.</p>
 <h2 id="Manually-deploying-Smart-Contracts"><a href="#Manually-deploying-Smart-Contracts" class="headerlink" title="Manually deploying Smart Contracts"></a>Manually deploying Smart Contracts</h2><p>As mentioned earlier, Embark handles the deployment of our Smart Contracts using  the function <code>config()</code> function. If we wish to deploy particular Smart Contracts manually, we can do so using an imported Smart Contract reference. We just need to make sure that we’re doing this inside a <code>contract()</code> block as discussed earlier:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const SimpleStorage = require(&apos;Embark/contracts/SimpleStorage&apos;);</span><br><span class="line"></span><br><span class="line">contract(&apos;SimpleStorage Deploy&apos;, () =&gt; &#123;</span><br><span class="line">  let SimpleStorageInstance;</span><br><span class="line"></span><br><span class="line">  before(async function() &#123;</span><br><span class="line">    SimpleStorageInstance = await SimpleStorage.deploy(&#123; arguments: [150] &#125;).send();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(&apos;should set constructor value&apos;, async () =&gt; &#123;</span><br><span class="line">    let result = await SimpleStorageInstance.methods.storedData().call();</span><br><span class="line">    assert.strictEqual(parseInt(result, 10), 150);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const SimpleStorage &#x3D; require(&#39;Embark&#x2F;contracts&#x2F;SimpleStorage&#39;);</span><br><span class="line"></span><br><span class="line">contract(&#39;SimpleStorage Deploy&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">  let SimpleStorageInstance;</span><br><span class="line"></span><br><span class="line">  before(async function() &#123;</span><br><span class="line">    SimpleStorageInstance &#x3D; await SimpleStorage.deploy(&#123; arguments: [150] &#125;).send();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(&#39;should set constructor value&#39;, async () &#x3D;&gt; &#123;</span><br><span class="line">    let result &#x3D; await SimpleStorageInstance.methods.storedData().call();</span><br><span class="line">    assert.strictEqual(parseInt(result, 10), 150);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Util-functions"><a href="#Util-functions" class="headerlink" title="Util functions"></a>Util functions</h2><h3 id="assert-reverts"><a href="#assert-reverts" class="headerlink" title="assert.reverts"></a>assert.reverts</h3><p>Using <code>assert.reverts</code>, you can easily assert that your transaction reverts.</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">await</span> assert.reverts(contractMethodAndArguments[, options][, message])</span><br></pre></td></tr></table></figure>
@@ -920,79 +922,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -1005,7 +954,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

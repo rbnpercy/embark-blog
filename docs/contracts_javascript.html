@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/contracts_javascript.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/contracts_javascript.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/contracts_javascript.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/contracts_javascript.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -767,14 +769,14 @@ svg4everybody();
           <p>In order to talk to our deployed Smart Contracts through a web application, we typically need a JavaScript equivalent that offers APIs to make this possible. Embark generates JavaScript artifacts for all Smart Contracts used by our application.</p>
 <p>In this guide we’ll take a quick look how to make use of them!</p>
 <h2 id="Importing-and-using-Smart-Contracts"><a href="#Importing-and-using-Smart-Contracts" class="headerlink" title="Importing and using Smart Contracts"></a>Importing and using Smart Contracts</h2><p>Embark will <a href="/docs/javascript_usage.html#Embark-Artifacts">automatically generate artifacts</a> for all configured Smart Contracts in our application, making them available to an application’s front-end. Allwe have to do is importing them accordingly. For example, the Smart Contract below:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract SimpleStorage &#123;</span><br><span class="line">  uint public storedData;</span><br><span class="line"></span><br><span class="line">  function SimpleStorage(uint initialValue) &#123;</span><br><span class="line">    storedData = initialValue;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function set(uint x) &#123;</span><br><span class="line">    storedData = x;</span><br><span class="line">  &#125;</span><br><span class="line">  function get() constant returns (uint retVal) &#123;</span><br><span class="line">    return storedData;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">contract SimpleStorage &#123;</span><br><span class="line">  uint public storedData;</span><br><span class="line"></span><br><span class="line">  function SimpleStorage(uint initialValue) &#123;</span><br><span class="line">    storedData &#x3D; initialValue;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function set(uint x) &#123;</span><br><span class="line">    storedData &#x3D; x;</span><br><span class="line">  &#125;</span><br><span class="line">  function get() constant returns (uint retVal) &#123;</span><br><span class="line">    return storedData;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Will available as JavaScript object, after artifact generation and can be imported as:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; SimpleStorage &#125; from &apos;./embarkArtifacts/contracts&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; SimpleStorage &#125; from &#39;.&#x2F;embarkArtifacts&#x2F;contracts&#39;;</span><br></pre></td></tr></table></figure>
 
 <p>Notice that the exact path to the Smart Contract source is configured using the <code>generationDir</code> property in <a href="/docs/configuration.html#generationDir">Embark’s configuration</a>.</p>
 <p>Once imported, Smart Contract APIs can be used as needed. The code below uses Web.js syntax and might differ from your APIs, depending on what web3 connector you’ve installed.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SimpleStorage.methods.set(100).send();</span><br><span class="line"></span><br><span class="line">SimpleStorage.methods.get().call().then(value =&gt; &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">SimpleStorage.methods.storedData().call().then(value =&gt; &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SimpleStorage.methods.set(100).send();</span><br><span class="line"></span><br><span class="line">SimpleStorage.methods.get().call().then(value &#x3D;&gt; &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">SimpleStorage.methods.storedData().call().then(value &#x3D;&gt; &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
         </div>
         <div class="o-container-medium o-distance-l">
@@ -812,79 +814,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -897,7 +846,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

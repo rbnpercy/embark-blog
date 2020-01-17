@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/news/2018/05/04/embark-3-0-released/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2018/05/04/embark-3-0-released/index.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -160,7 +162,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -181,13 +183,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -237,8 +239,8 @@ svg4everybody();
 <main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
     <p>Embark is now part of <a href="https://status.im/" target="_blank" rel="noopener">Status</a> and we are happy to announce Embark 3.0 by Status!</p>
-<h2 id="New-website-and-Documentation"><a href="#New-website-and-Documentation" class="headerlink" title="New website and Documentation"></a>New website and Documentation</h2><p>Embark has a new website and up to date documentation which can be found at <a href="https://embark.status.im/docs/">https://embark.status.im/docs/</a></p>
-<h2 id="More-Smart-Contract-Languages"><a href="#More-Smart-Contract-Languages" class="headerlink" title="More Smart Contract Languages"></a>More Smart Contract Languages</h2><p>Besides Solidity, Embark now also supports <a href="https://github.com/ethereum/vyper/" target="_blank" rel="noopener">Vyper</a> out of the box, as well as <a href="https://github.com/pirapira/bamboo" target="_blank" rel="noopener">Bamboo</a> through an embark <a href="https://github.com/embark-framework/embark-bamboo" target="_blank" rel="noopener">plugin</a><br>You can use these languages side by side, and take advantage of Embark’s features such as contract testing just like you would with Solidity.</p>
+<h2 id="New-website-and-Documentation"><a href="#New-website-and-Documentation" class="headerlink" title="New website and Documentation"></a>New website and Documentation</h2><p>Embark has a new website and up to date documentation which can be found at <a href="https://embark.embarklabs.io/docs/">https://embark.embarklabs.io/docs/</a></p>
+<h2 id="More-Smart-Contract-Languages"><a href="#More-Smart-Contract-Languages" class="headerlink" title="More Smart Contract Languages"></a>More Smart Contract Languages</h2><p>Besides Solidity, Embark now also supports <a href="https://github.com/ethereum/vyper/" target="_blank" rel="noopener">Vyper</a> out of the box, as well as <a href="https://github.com/pirapira/bamboo" target="_blank" rel="noopener">Bamboo</a> through an embark <a href="https://github.com/embarklabs/embark-bamboo" target="_blank" rel="noopener">plugin</a><br>You can use these languages side by side, and take advantage of Embark’s features such as contract testing just like you would with Solidity.</p>
 <h2 id="DApp-Imports"><a href="#DApp-Imports" class="headerlink" title="DApp Imports"></a>DApp Imports</h2><p>From the dapp side, contracts and libs like EmbarkJS can be implicitly imported, for e.g to import a contract:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> SimpleStorage <span class="keyword">from</span> <span class="string">'Embark/contracts/SimpleStorage'</span></span><br></pre></td></tr></table></figure>
 
@@ -269,7 +271,7 @@ svg4everybody();
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"development"</span>: &#123;</span><br><span class="line">    <span class="string">"contracts"</span>: &#123;</span><br><span class="line">      <span class="string">"ERC20"</span>: &#123;</span><br><span class="line">        file: <span class="string">"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>or even import them directly in solidity without the need for the config:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &quot;openzeppelin-solidity/contracts/ownership/Ownable.sol&quot;;</span><br><span class="line"></span><br><span class="line">contract MyContract is Ownable &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &quot;openzeppelin-solidity&#x2F;contracts&#x2F;ownership&#x2F;Ownable.sol&quot;;</span><br><span class="line"></span><br><span class="line">contract MyContract is Ownable &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Embark-Demo-App"><a href="#Embark-Demo-App" class="headerlink" title="Embark Demo App"></a>Embark Demo App</h2><p>The demo app has been updated to reflect the new structure. It also now uses ReactJS which provides a good example on how to use React with Embark.</p>
 <h2 id="Web3-js-1-0-by-default"><a href="#Web3-js-1-0-by-default" class="headerlink" title="Web3.js 1.0 by default"></a>Web3.js 1.0 by default</h2><p>Embark now uses web3.js 1.0 in all layers, including in the console and in contracts testing.</p>
@@ -285,7 +287,7 @@ svg4everybody();
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">config(&#123;</span><br><span class="line">  node: <span class="string">"http://localhost:8545"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Swarm-support"><a href="#Swarm-support" class="headerlink" title="Swarm support"></a>Swarm support</h2><p>Swarm is now completely integrated on-par with IPFS. You can use interact with Swarm on the dapp side, as well as upload your dapp to Swarm.Swarm</p>
-<h2 id="Misc-Bugfixes-and-Improvements"><a href="#Misc-Bugfixes-and-Improvements" class="headerlink" title="Misc Bugfixes and Improvements"></a>Misc Bugfixes and Improvements</h2><p>For a complete list please refer to the <a href="https://github.com/embark-framework/embark/releases/tag/3.0.0" target="_blank" rel="noopener">release notes in github</a></p>
+<h2 id="Misc-Bugfixes-and-Improvements"><a href="#Misc-Bugfixes-and-Improvements" class="headerlink" title="Misc Bugfixes and Improvements"></a>Misc Bugfixes and Improvements</h2><p>For a complete list please refer to the <a href="https://github.com/embarklabs/embark/releases/tag/3.0.0" target="_blank" rel="noopener">release notes in github</a></p>
 <h2 id="Chatroom"><a href="#Chatroom" class="headerlink" title="Chatroom"></a>Chatroom</h2><p>To discuss about Embark or Dapp development, please <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener">join us at the gitter channel</a></p>
 
   </section>
@@ -320,79 +322,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -405,7 +354,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

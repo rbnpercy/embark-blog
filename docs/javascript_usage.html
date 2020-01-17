@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/javascript_usage.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/javascript_usage.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/javascript_usage.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/javascript_usage.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -775,10 +777,10 @@ svg4everybody();
 <p>We’ll discuss these more in this guide.</p>
 <h2 id="Importing-EmbarkJS"><a href="#Importing-EmbarkJS" class="headerlink" title="Importing EmbarkJS"></a>Importing EmbarkJS</h2><p>Once Embark has generated all necessary artifacts, we can start using them when building an application. Artifacts are really just written to disc, so if we want to get hold of any of them, it’s really just a matter of importing them accordingly.</p>
 <p>The following code imports EmbarkJS:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import EmbarkJS from &apos;./embarkArtifacts/embarkjs&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import EmbarkJS from &#39;.&#x2F;embarkArtifacts&#x2F;embarkjs&#39;;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Waiting-for-EmbarkJS-to-be-ready"><a href="#Waiting-for-EmbarkJS-to-be-ready" class="headerlink" title="Waiting for EmbarkJS to be ready"></a>Waiting for EmbarkJS to be ready</h2><p>EmbarkJS also includes a <code>onReady</code> function. This is very useful to ensure that your Dapp only starts interacting with contracts when the proper connection to web3 has been made and ready to use.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import EmbarkJS from &apos;Embark/EmbarkJS&apos;;</span><br><span class="line">import SimpleStorage from &apos;Embark/contracts/SimpleStorage&apos;;</span><br><span class="line"></span><br><span class="line">EmbarkJS.onReady((error) =&gt; &#123;</span><br><span class="line">  if (error) &#123;</span><br><span class="line">    console.error(&apos;Error while connecting to web3&apos;, error);</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  SimpleStorage.methods.set(100).send();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import EmbarkJS from &#39;Embark&#x2F;EmbarkJS&#39;;</span><br><span class="line">import SimpleStorage from &#39;Embark&#x2F;contracts&#x2F;SimpleStorage&#39;;</span><br><span class="line"></span><br><span class="line">EmbarkJS.onReady((error) &#x3D;&gt; &#123;</span><br><span class="line">  if (error) &#123;</span><br><span class="line">    console.error(&#39;Error while connecting to web3&#39;, error);</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  SimpleStorage.methods.set(100).send();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Using-dappConnection"><a href="#Using-dappConnection" class="headerlink" title="Using dappConnection"></a>Using <code>dappConnection</code></h2><p>After reading the section above on <code>EmbarkJS.onReady</code>, you might be wondering where EmbarkJS establishes a connection.</p>
 <p>The answer is: you decide! You can configure it using <code>dappConnection</code>, a config property you can find in the Smart Contract config (by default at <code>config/contracts.js</code>).</p>
@@ -800,12 +802,12 @@ svg4everybody();
 <p>If you want to use an external node,  like Infura, we instead recommend to set it in the Blockchain config (<code>config/blockchain.js</code>) using the property <code>endpoint</code>.<br>Then, using <code>$EMBARK</code> will use Embark’s proxy, which in part will be connected to that endpoint.</p>
 <h2 id="Requesting-account-access"><a href="#Requesting-account-access" class="headerlink" title="Requesting account access"></a>Requesting account access</h2><p>As of <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md" target="_blank" rel="noopener">EIP1102</a>, decentralized applications MUST request access to a DApp’s user accounts. Embark offers several options on how to implement this.</p>
 <p>An Embark application’s Smart Contract configuration file (typically located in <code>config/contracts.js</code>) comes with a <code>dappAutoEnable</code> property which controls whether or not EmbarkJS should automatically try to request account access:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">  // Automatically call `ethereum.enable` if true.</span><br><span class="line">  // If false, the following code must run before sending any transaction: `await EmbarkJS.enableEthereum();`</span><br><span class="line">  dappAutoEnable: true,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  ...</span><br><span class="line">  &#x2F;&#x2F; Automatically call &#96;ethereum.enable&#96; if true.</span><br><span class="line">  &#x2F;&#x2F; If false, the following code must run before sending any transaction: &#96;await EmbarkJS.enableEthereum();&#96;</span><br><span class="line">  dappAutoEnable: true,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>By default, the value of <code>dappAutoEnable</code> is <code>true</code> which means that Embark will call <code>ethereum.enable</code> for us to request account access when the first page of the DApp is loaded.</p>
 <p>If we want more control over when our application should request account access, we can set <code>dappAutoEnable</code> to false and make use of <code>EmbarkJS.enableEthereum()</code>.</p>
 <p>This method will essentially cause our application to request account access, giving us full control over when this should happen.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">  const accounts = await EmbarkJS.enableEthereum();</span><br><span class="line">  // access granted</span><br><span class="line">&#125; catch() &#123;</span><br><span class="line">  // access not granted</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">  const accounts &#x3D; await EmbarkJS.enableEthereum();</span><br><span class="line">  &#x2F;&#x2F; access granted</span><br><span class="line">&#125; catch() &#123;</span><br><span class="line">  &#x2F;&#x2F; access not granted</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Additional-APIs"><a href="#Additional-APIs" class="headerlink" title="Additional APIs"></a>Additional APIs</h2><p>This guide only touched on getting started with EmbarkJS. There are many more APIs to explore, depending on what we’re achieving to build. Have a look at the dedicated guides to learn more:</p>
 <ul>
@@ -851,79 +853,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -936,7 +885,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/contributing.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/contributing.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/contributing.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/contributing.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -774,7 +776,7 @@ svg4everybody();
 <li><a href="#rules">Coding Rules</a></li>
 <li><a href="#commit">Commit Message Guidelines</a></li>
 </ul>
-<h2 id="Code-of-Conduct"><a href="#Code-of-Conduct" class="headerlink" title=" Code of Conduct"></a><a name="coc"></a> Code of Conduct</h2><p>Help us keep Embark open and inclusive. Please read and follow our <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code of Conduct</a>.</p>
+<h2 id="Code-of-Conduct"><a href="#Code-of-Conduct" class="headerlink" title=" Code of Conduct"></a><a name="coc"></a> Code of Conduct</h2><p>Help us keep Embark open and inclusive. Please read and follow our <a href="https://github.com/embarklabs/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code of Conduct</a>.</p>
 <h2 id="Got-a-Question-or-Problem"><a href="#Got-a-Question-or-Problem" class="headerlink" title=" Got a Question or Problem?"></a><a name="question"></a> Got a Question or Problem?</h2><p>Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. You’ve got much better chances of getting your question answered on <a href="https://ethereum.stackexchange.com/search?tab=newest&q=embark" target="_blank" rel="noopener">Stack Exchange</a> where the questions should be tagged with tag <code>embark</code>.</p>
 <p>Stack Exchange is a much better place to ask questions since:</p>
 <ul>
@@ -784,7 +786,7 @@ svg4everybody();
 </ul>
 <p>To save your and our time, we will systematically close all issues that are requests for general support and redirect people to Stack Exchange.</p>
 <p>If you would like to chat about the question in real-time, you can reach out via <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener">our gitter channel</a>.</p>
-<h2 id="Found-a-Bug"><a href="#Found-a-Bug" class="headerlink" title=" Found a Bug?"></a><a name="issue"></a> Found a Bug?</h2><p>If you find a bug in the source code, you can help us by<br><a href="#submit-issue">submitting an issue</a> to our <a href="https://github.com/embark-framework/embark/" target="_blank" rel="noopener">GitHub Repository</a>. Even better, you can<br><a href="#submit-pr">submit a Pull Request</a> with a fix.</p>
+<h2 id="Found-a-Bug"><a href="#Found-a-Bug" class="headerlink" title=" Found a Bug?"></a><a name="issue"></a> Found a Bug?</h2><p>If you find a bug in the source code, you can help us by<br><a href="#submit-issue">submitting an issue</a> to our <a href="https://github.com/embarklabs/embark/" target="_blank" rel="noopener">GitHub Repository</a>. Even better, you can<br><a href="#submit-pr">submit a Pull Request</a> with a fix.</p>
 <h2 id="Missing-a-Feature"><a href="#Missing-a-Feature" class="headerlink" title=" Missing a Feature?"></a><a name="feature"></a> Missing a Feature?</h2><p>You can <em>request</em> a new feature by <a href="#submit-issue">submitting an issue</a> to our GitHub<br>Repository. If you would like to <em>implement</em> a new feature, please submit an issue with<br>a proposal for your work first, to be sure that we can use it.<br>Please consider what kind of change it is:</p>
 <ul>
 <li>For a <strong>Major Feature</strong>, first open an issue and outline your proposal so that it can be<br>discussed. This will also allow us to better coordinate our efforts, prevent duplication of work,<br>and help you to craft the change so that it is successfully accepted into the project.</li>
@@ -792,12 +794,12 @@ svg4everybody();
 </ul>
 <h2 id="Submission-Guidelines"><a href="#Submission-Guidelines" class="headerlink" title=" Submission Guidelines"></a><a name="submit"></a> Submission Guidelines</h2><h3 id="Submitting-an-Issue"><a href="#Submitting-an-Issue" class="headerlink" title=" Submitting an Issue"></a><a name="submit-issue"></a> Submitting an Issue</h3><p>Before you submit an issue, please search the issue tracker, maybe an issue for your problem already exists and the discussion might inform you of workarounds readily available.</p>
 <p>We want to fix all the issues as soon as possible, but before fixing a bug we need to reproduce and confirm it. In order to reproduce bugs, we will systematically ask you to provide steps to reproduce your issue.</p>
-<p>You can file new issues by filling out our <a href="https://github.com/embark-framework/embark/issues/new/choose" target="_blank" rel="noopener">new issue form</a>.</p>
+<p>You can file new issues by filling out our <a href="https://github.com/embarklabs/embark/issues/new/choose" target="_blank" rel="noopener">new issue form</a>.</p>
 <h3 id="Submitting-a-Pull-Request-PR"><a href="#Submitting-a-Pull-Request-PR" class="headerlink" title=" Submitting a Pull Request (PR)"></a><a name="submit-pr"></a> Submitting a Pull Request (PR)</h3><p>Before you submit your Pull Request (PR) consider the following guidelines:</p>
 <ol>
-<li><p>Search <a href="https://github.com/embark-framework/embark/pulls" target="_blank" rel="noopener">GitHub</a> for an open or closed PR<br>that relates to your submission. You don’t want to duplicate effort.</p>
+<li><p>Search <a href="https://github.com/embarklabs/embark/pulls" target="_blank" rel="noopener">GitHub</a> for an open or closed PR<br>that relates to your submission. You don’t want to duplicate effort.</p>
 </li>
-<li><p>Fork the embark-framework/embark repo.</p>
+<li><p>Fork the embarklabs/embark repo.</p>
 </li>
 <li><p>Make your changes in a new git branch:</p>
   <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -b my-fix-branch master</span><br></pre></td></tr></table></figure>
@@ -853,7 +855,7 @@ svg4everybody();
 </ul>
 <h2 id="Commit-Message-Guidelines"><a href="#Commit-Message-Guidelines" class="headerlink" title=" Commit Message Guidelines"></a><a name="commit"></a> Commit Message Guidelines</h2><p>We have very precise rules over how our git commit messages can be formatted.  This leads to <strong>more<br>readable messages</strong> that are easy to follow when looking through the <strong>project history</strong>.  But also,<br>we use the git commit messages to <strong>generate the Embark change log</strong>.</p>
 <h3 id="Commit-Message-Format"><a href="#Commit-Message-Format" class="headerlink" title="Commit Message Format"></a>Commit Message Format</h3><p>Each commit message consists of a <strong>header</strong>, a <strong>body</strong> and a <strong>footer</strong>.  The header has a special<br>format that includes a <strong>type</strong>, a <strong>scope</strong> and a <strong>subject</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type(@embark|@cockpit/&lt;SCOPE&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type(@embark|@cockpit&#x2F;&lt;SCOPE&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
 
 <p>The <strong>header</strong> is mandatory and the <strong>scope</strong> of the header is optional.</p>
 <p>Any line of the commit message cannot be longer 100 characters! This allows the message to be easier<br>to read on GitHub as well as in various git tools.</p>
@@ -932,79 +934,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -1017,7 +966,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

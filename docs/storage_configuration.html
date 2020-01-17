@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/storage_configuration.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/storage_configuration.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/storage_configuration.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/storage_configuration.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -767,7 +769,7 @@ svg4everybody();
           <p>With Embark, we easily connect to decentralized storage solutions such as IPFS and Swarm. This enables us to upload, storing and download data and assets for our decentralized applications. Let’s take a closer look at how to make use of this.</p>
 <h2 id="Configuration-basics"><a href="#Configuration-basics" class="headerlink" title="Configuration basics"></a>Configuration basics</h2><p>Embark will check our preferred storage configuration in the file <code>config/storage.js</code>, unless <a href="/docs/configuration.html">configured differently</a> in our application’s <code>embark.json</code> file. This file contains the preferred configuration for each environment, with <code>default</code> being the configuration that applies to every environment. If <a href="/docs/environments.html">environments in Embark</a> are new to you, check out the dedicated guide first and come back.</p>
 <p>Each of these configuration options can be individually overridden on a per environment basis.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  &quot;default&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;ipfs_bin&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;available_providers&quot;: [&quot;ipfs&quot;, &quot;swarm&quot;],</span><br><span class="line">    &quot;upload&quot;:&#123;</span><br><span class="line">      &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">      &quot;host&quot;: &quot;localhost&quot;,</span><br><span class="line">      &quot;port&quot;: 5001,</span><br><span class="line">      &quot;getUrl&quot;: &quot;http://localhost:8080/ipfs&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;dappConnection&quot;:[</span><br><span class="line">      &#123;&quot;provider&quot;: &quot;swarm&quot;, &quot;host&quot;: &quot;localhost&quot;, &quot;port&quot;: 8500, &quot;getUrl&quot;: &quot;http://localhost:8500/bzz:/&quot;&#125;,</span><br><span class="line">      &#123;&quot;provider&quot;: &quot;ipfs&quot;, &quot;host&quot;: &quot;localhost&quot;, &quot;port&quot;: 5001, &quot;getUrl&quot;: &quot;http://localhost:8080/ipfs/&quot;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;development&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;host&quot;: &quot;localhost&quot;,</span><br><span class="line">    &quot;port&quot;: 5001</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  &quot;default&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;ipfs_bin&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;available_providers&quot;: [&quot;ipfs&quot;, &quot;swarm&quot;],</span><br><span class="line">    &quot;upload&quot;:&#123;</span><br><span class="line">      &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">      &quot;host&quot;: &quot;localhost&quot;,</span><br><span class="line">      &quot;port&quot;: 5001,</span><br><span class="line">      &quot;getUrl&quot;: &quot;http:&#x2F;&#x2F;localhost:8080&#x2F;ipfs&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;dappConnection&quot;:[</span><br><span class="line">      &#123;&quot;provider&quot;: &quot;swarm&quot;, &quot;host&quot;: &quot;localhost&quot;, &quot;port&quot;: 8500, &quot;getUrl&quot;: &quot;http:&#x2F;&#x2F;localhost:8500&#x2F;bzz:&#x2F;&quot;&#125;,</span><br><span class="line">      &#123;&quot;provider&quot;: &quot;ipfs&quot;, &quot;host&quot;: &quot;localhost&quot;, &quot;port&quot;: 5001, &quot;getUrl&quot;: &quot;http:&#x2F;&#x2F;localhost:8080&#x2F;ipfs&#x2F;&quot;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;development&quot;: &#123;</span><br><span class="line">    &quot;enabled&quot;: true,</span><br><span class="line">    &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;host&quot;: &quot;localhost&quot;,</span><br><span class="line">    &quot;port&quot;: 5001</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>The available options are:</p>
 <table>
@@ -857,10 +859,10 @@ svg4everybody();
 <h2 id="Using-a-local-node"><a href="#Using-a-local-node" class="headerlink" title="Using a local node"></a>Using a local node</h2><p>Either for IPFS or Swarm, Embark will default to use a local node for development purposes. Note that we still need to set up the right port according to the storage platform we use. By default, IPFS runs on port <code>5001</code> and Swarm runs on <code>8500</code>.</p>
 <p>We can start a local storage node ourselves or now we can let Embark start the node for us. Letting Embark do the job lets us focus on developing faster while doing it ourselves might give us more flexibility. Obviously, we still need to have IPFS or Swarm installed locally for it to work.</p>
 <p><strong>Important configurations for swarm</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;development&quot;: &#123;</span><br><span class="line">    &quot;provider&quot;: &quot;swarm&quot;,</span><br><span class="line">    &quot;account&quot;: &#123;</span><br><span class="line">      &quot;address&quot;: &quot;YOUR_ACCOUNT_ADDRESS&quot;,</span><br><span class="line">      &quot;password&quot;: &quot;PATH/TO/PASSWORD/FILE&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;swarmPath&quot;: &quot;PATH/TO/SWARM/EXECUTABLE&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;development&quot;: &#123;</span><br><span class="line">    &quot;provider&quot;: &quot;swarm&quot;,</span><br><span class="line">    &quot;account&quot;: &#123;</span><br><span class="line">      &quot;address&quot;: &quot;YOUR_ACCOUNT_ADDRESS&quot;,</span><br><span class="line">      &quot;password&quot;: &quot;PATH&#x2F;TO&#x2F;PASSWORD&#x2F;FILE&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;swarmPath&quot;: &quot;PATH&#x2F;TO&#x2F;SWARM&#x2F;EXECUTABLE&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Using-a-public-gateway"><a href="#Using-a-public-gateway" class="headerlink" title="Using a public gateway"></a>Using a public gateway</h2><p>Embark can connect to a public gateway when using any of the available storage options. To use a public gateway, instead of running a local node, for IPFS or Swarm, use the following <code>config/storage.js</code> options:</p>
-<h3 id="IPFS"><a href="#IPFS" class="headerlink" title="IPFS"></a>IPFS</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;development&quot;: &#123;</span><br><span class="line">  &quot;enabled&quot;: true,</span><br><span class="line">  &quot;upload&quot;:&#123;</span><br><span class="line">    &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;host&quot;: &quot;ipfs.infura.io&quot;,</span><br><span class="line">    &quot;port&quot;: 80,</span><br><span class="line">    &quot;protocol&quot;: &quot;https&quot;,</span><br><span class="line">    &quot;getUrl&quot;: &quot;https://ipfs.infura.io/ipfs/&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="IPFS"><a href="#IPFS" class="headerlink" title="IPFS"></a>IPFS</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;development&quot;: &#123;</span><br><span class="line">  &quot;enabled&quot;: true,</span><br><span class="line">  &quot;upload&quot;:&#123;</span><br><span class="line">    &quot;provider&quot;: &quot;ipfs&quot;,</span><br><span class="line">    &quot;host&quot;: &quot;ipfs.infura.io&quot;,</span><br><span class="line">    &quot;port&quot;: 80,</span><br><span class="line">    &quot;protocol&quot;: &quot;https&quot;,</span><br><span class="line">    &quot;getUrl&quot;: &quot;https:&#x2F;&#x2F;ipfs.infura.io&#x2F;ipfs&#x2F;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Swarm"><a href="#Swarm" class="headerlink" title="Swarm"></a>Swarm</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;development&quot;: &#123;</span><br><span class="line">  &quot;enabled&quot;: true,</span><br><span class="line">  &quot;upload&quot;: &#123;</span><br><span class="line">    &quot;provider&quot;: &quot;swarm&quot;,</span><br><span class="line">    &quot;host&quot;: &quot;localhost&quot;,</span><br><span class="line">    &quot;port&quot;: 8500</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -868,9 +870,9 @@ svg4everybody();
 <p>If you are using the built in webserver, the CORS would need to be set to <code>http://localhost:8000</code>, however if you are using <code>embark upload</code>, the domain of the decentralised storage host should be included in CORS.</p>
 <p>Depending on your <code>upload</code> settings in <code>storage.js</code>, this could be <code>http://localhost:8080</code> or <code>http://ipfs.infura.io</code> for IPFS or it could be <code>http://localhost:8500</code> or <code>http://swarm-gateways.net</code> for Swarm.</p>
 <p>Of course, if you are hosting your DApp on a different domain (i.e. not <code>localhost</code>, then that would need to be included in CORS as well. Examples of how to include multiple domains for each are below:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin &quot;[\&quot;http://localhost:8000\&quot;, \&quot;http://localhost:8500\&quot;, \&quot;http://localhost:8545\&quot;, \&quot;ws://localhost:8546\&quot;]&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin &quot;[\&quot;http:&#x2F;&#x2F;localhost:8000\&quot;, \&quot;http:&#x2F;&#x2F;localhost:8500\&quot;, \&quot;http:&#x2F;&#x2F;localhost:8545\&quot;, \&quot;ws:&#x2F;&#x2F;localhost:8546\&quot;]&quot;</span><br></pre></td></tr></table></figure>
 <p>NOTE: <code>http://localhost:8545</code> and <code>ws://localhost:8546</code> are for geth.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">swarm --bzzaccount=fedda09fd9218d1ea4fd41ad44694fa4ccba1878 --datadir=~/.bzz-data/ --password=config/development/password --corsdomain=http://localhost:8000,http://localhost:8080,http://localhost:8545,ws://localhost:8546 --ens-api=&apos;&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">swarm --bzzaccount&#x3D;fedda09fd9218d1ea4fd41ad44694fa4ccba1878 --datadir&#x3D;~&#x2F;.bzz-data&#x2F; --password&#x3D;config&#x2F;development&#x2F;password --corsdomain&#x3D;http:&#x2F;&#x2F;localhost:8000,http:&#x2F;&#x2F;localhost:8080,http:&#x2F;&#x2F;localhost:8545,ws:&#x2F;&#x2F;localhost:8546 --ens-api&#x3D;&#39;&#39;</span><br></pre></td></tr></table></figure>
 
         </div>
         <div class="o-container-medium o-distance-l">
@@ -908,79 +910,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -993,7 +942,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

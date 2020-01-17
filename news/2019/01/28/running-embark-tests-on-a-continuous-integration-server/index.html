@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/index.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -160,7 +162,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -181,13 +183,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -253,12 +255,12 @@ svg4everybody();
 
 <p>From this point we should see that the 3 tests from the demo are running successfully. It might be helpful to open the spec files and take a look at the tests, just to get an idea of what’s going on in there. The tests are located in <code>test/simple_storage_spec.js</code>. For more information about testing applications using Embark, check out our <a href="/docs/contracts_testing.html">Contracts Testing Guide</a>.</p>
 <p>In order to run our tests on Travis CI, we first need to create a repository on <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>. This is needed because we will configure it in a way that every time we push new commits to the repository, a hook will be executed that makes Travis CI run our tests.<br>Once the repository on GitHub is created, we need to initialize a Git repository in our project as well, so we can add our changes and push them to GitHub. For that we use the Git’s commands accordingly:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;first commit&quot;</span><br><span class="line">$ git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPOSITORY.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;first commit&quot;</span><br><span class="line">$ git remote add origin git@github.com:YOUR_USERNAME&#x2F;YOUR_REPOSITORY.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 
 <p>Sweet! Now that we have that set up, let’s connect Travis to it!</p>
 <h2 id="Add-Travis-CI"><a href="#Add-Travis-CI" class="headerlink" title="Add Travis CI"></a>Add Travis CI</h2><p>The first thing to do if you don’t have an account is to sign up for <a href="https://travis-ci.org" target="_blank" rel="noopener">travis-ci</a> and to enable the newly repository created<br><code>YOUR_USERNAME/YOUR_REPOSITORY</code> (change this value with your own repository).</p>
 <p>The next step is to create the Travis CI configuration file: <code>.travis.yml</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">os:</span><br><span class="line">  - linux</span><br><span class="line">  - osx</span><br><span class="line">node_js:</span><br><span class="line">  - &quot;10&quot;</span><br><span class="line">before_install:</span><br><span class="line">  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.1</span><br><span class="line">  - export PATH=&quot;$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH&quot;</span><br><span class="line">cache:</span><br><span class="line">  - yarn: true</span><br><span class="line">install:</span><br><span class="line">  - yarn install</span><br><span class="line">script:</span><br><span class="line">  - yarn embark test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">os:</span><br><span class="line">  - linux</span><br><span class="line">  - osx</span><br><span class="line">node_js:</span><br><span class="line">  - &quot;10&quot;</span><br><span class="line">before_install:</span><br><span class="line">  - curl -o- -L https:&#x2F;&#x2F;yarnpkg.com&#x2F;install.sh | bash -s -- --version 1.19.1</span><br><span class="line">  - export PATH&#x3D;&quot;$HOME&#x2F;.yarn&#x2F;bin:$HOME&#x2F;.config&#x2F;yarn&#x2F;global&#x2F;node_modules&#x2F;.bin:$PATH&quot;</span><br><span class="line">cache:</span><br><span class="line">  - yarn: true</span><br><span class="line">install:</span><br><span class="line">  - yarn install</span><br><span class="line">script:</span><br><span class="line">  - yarn embark test</span><br></pre></td></tr></table></figure>
 
 <p>In this file we are specifying the node version we want to use (10), we are installying <code>yarn</code> as a package manager and finally we are running embark test, which will tell Travis to execute our tests on the CI server.</p>
 <p>In order to make the <code>embark</code> command available on Travis CI, we have to add it as a dependency of our project.<br>If you use <code>npm</code>:</p>
@@ -306,79 +308,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -391,7 +340,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 

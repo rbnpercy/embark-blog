@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.status.im/docs/blockchain_configuration.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/docs/blockchain_configuration.html">
   <!-- Alternative links -->
   
 
@@ -22,7 +22,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-precomposed.png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-precomposed.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/embark.css">
+  
+<link rel="stylesheet" href="/css/embark.css">
+
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -161,7 +163,7 @@ svg4everybody();
             <svg class="c-icon c-icon--xs"><use xlink:href="/../assets/icons/symbols.svg#icon-close"></use></svg>
           </button>
         </div>
-        <div class="c-navigation__body">
+        <div class="c-navigation__body" style="display: none">
           <ul class="c-navigation__list">
             <li class="c-navigation__item">
               <a href="/docs/quick_start.html" class="c-navigation__anchor " title="Quick Start">Quick Start</a>
@@ -182,13 +184,13 @@ svg4everybody();
         </div>
       </nav>
       <div class="o-flex o-flex-center">
-        <form action="" class="o-flex__item u-hidden-until-large">
+        <form action="" class="o-flex__item u-hidden-until-large" style="display: none">
           <input type="search" placeholder="Search" id="search-input">
         </form>
         <div class="o-flex__item">
           <ul class="o-flex o-flex-center">
             <li class="o-flex__item">
-              <a href="https://github.com/embark-framework/embark" title="Github" target="_blank" class="u-link-ghost">
+              <a href="https://github.com/embarklabs/embark" title="Github" target="_blank" class="u-link-ghost">
                 <svg class="c-icon"><use xlink:href="/../assets/icons/symbols.svg#icon-github"></use></svg>
               </a>
             </li>
@@ -757,8 +759,8 @@ svg4everybody();
         </div>
       </div>
       <div class="o-guided-content__content">
-        <p class="c-meta">Last updated: December 5th 2019
-          (<a href="https://github.com/embark-framework/embark-site/edit/master/source/docs/blockchain_configuration.md" target="_blank">
+        <p class="c-meta">Last updated: January 17th 2020
+          (<a href="https://github.com/embarklabs/embark-site/edit/master/source/docs/blockchain_configuration.md" target="_blank">
             Improve this guide <svg class="c-icon c-icon--xs"><use xlink:href="/../../assets/icons/symbols.svg#icon-pen-write-paper"></use></svg>
           </a>)
         </p>
@@ -768,9 +770,9 @@ svg4everybody();
 <p>Embark offers a lot of configuration options and most of them already come with a decent default so we can start right away.</p>
 <h2 id="Common-Parameters"><a href="#Common-Parameters" class="headerlink" title="Common Parameters"></a>Common Parameters</h2><p>Here are the common parameters. You will often need only a few of them to make your Embark node work.</p>
 <p>If you want more configuration options, you can find them <a href="/docs/blockchain_configuration.html#Advanced-parameters">here</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  default: &#123;</span><br><span class="line">    enabled: true,</span><br><span class="line">    client: &quot;geth&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  development: &#123;  </span><br><span class="line">    clientConfig: &#123;</span><br><span class="line">      miningMode: &apos;dev&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  testnet: &#123;</span><br><span class="line">    endpoint: &quot;https://external-node.com&quot;,</span><br><span class="line">    accounts: [</span><br><span class="line">      &#123;</span><br><span class="line">        mnemonic: &quot;12 word mnemonic&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  default: &#123;</span><br><span class="line">    enabled: true,</span><br><span class="line">    client: &quot;geth&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  development: &#123;  </span><br><span class="line">    clientConfig: &#123;</span><br><span class="line">      miningMode: &#39;dev&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  testnet: &#123;</span><br><span class="line">    endpoint: &quot;https:&#x2F;&#x2F;external-node.com&quot;,</span><br><span class="line">    accounts: [</span><br><span class="line">      &#123;</span><br><span class="line">        mnemonic: &quot;12 word mnemonic&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Similar to <a href="/docs/contracts_configuration.html">configuring Smart Contracts</a>, this config contains environments that help configuring certain parameters differently depending of the environment. You can read more about <a href="https://embark.status.im/docs/environments.html">environments here</a>.</p>
+<p>Similar to <a href="/docs/contracts_configuration.html">configuring Smart Contracts</a>, this config contains environments that help configuring certain parameters differently depending of the environment. You can read more about <a href="https://embark.embarklabs.io/docs/environments.html">environments here</a>.</p>
 <h3 id="Parameter-descriptions"><a href="#Parameter-descriptions" class="headerlink" title="Parameter descriptions"></a>Parameter descriptions</h3><p>Most of the options are self-explanatory, still, here are some brief descriptions:</p>
 <table>
 <thead>
@@ -920,7 +922,7 @@ svg4everybody();
 <h2 id="Privatenet-configuration"><a href="#Privatenet-configuration" class="headerlink" title="Privatenet configuration"></a>Privatenet configuration</h2><p>A private network is really similar to using the development mode of a client. The biggest differences is that it does not come with a default pre-funded account and it will not use POA (proof of authority), meaning that blocks will need to be mined.</p>
 <p>Luckily, Embark has settings to limit the mining to a minimum so that everything can run smoothly while testing in a more realistic environment before going to a test network.</p>
 <h3 id="Privatenet-parameters"><a href="#Privatenet-parameters" class="headerlink" title="Privatenet parameters"></a>Privatenet parameters</h3><p>Here are common parameters for private net configurations:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">privatenet: &#123;</span><br><span class="line">  clientConfig: &#123;</span><br><span class="line">    miningMode: &apos;auto&apos;,</span><br><span class="line">    genesisBlock: &quot;config/privatenet/genesis.json&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config/privatenet/password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">privatenet: &#123;</span><br><span class="line">  clientConfig: &#123;</span><br><span class="line">    miningMode: &#39;auto&#39;,</span><br><span class="line">    genesisBlock: &quot;config&#x2F;privatenet&#x2F;genesis.json&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config&#x2F;privatenet&#x2F;password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Note that we can always use the parameters we saw in the <a href="#Common-Parameters">Common parameters section</a> to override the <code>default</code> parameters.</p>
 <h3 id="Parameter-descriptions-1"><a href="#Parameter-descriptions-1" class="headerlink" title="Parameter descriptions"></a>Parameter descriptions</h3><table>
@@ -949,7 +951,7 @@ svg4everybody();
 </tbody></table>
 <h2 id="Testnet-configuration"><a href="#Testnet-configuration" class="headerlink" title="Testnet configuration"></a>Testnet configuration</h2><p>Test networks are networks that are public. Knowing that, if we want to connect to a node that we control, we will first need to synchronize it. This can take hours, as we need to download the blocks that we are missing from the other peers.</p>
 <p>The big advantage of using a local synced node is that we have control over it and it preserves our privacy, as we aren’t using a third party node. However, as mentioned, it takes a lot of time to synchronize a node and also requires a lot of computer resources, so keep it in mind if you want to go down that route.</p>
-<h3 id="Testnet-parameters"><a href="#Testnet-parameters" class="headerlink" title="Testnet parameters"></a>Testnet parameters</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">testnet: &#123;</span><br><span class="line">  networkType: &quot;testnet&quot;,</span><br><span class="line">  syncMode: &quot;light&quot;,</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config/testnet/password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Testnet-parameters"><a href="#Testnet-parameters" class="headerlink" title="Testnet parameters"></a>Testnet parameters</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">testnet: &#123;</span><br><span class="line">  networkType: &quot;testnet&quot;,</span><br><span class="line">  syncMode: &quot;light&quot;,</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config&#x2F;testnet&#x2F;password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Here are the necessary parameters. Again, we can add more to override as you see fit.</p>
 <h3 id="Parameter-descriptions-2"><a href="#Parameter-descriptions-2" class="headerlink" title="Parameter descriptions"></a>Parameter descriptions</h3><table>
@@ -992,7 +994,7 @@ svg4everybody();
 </tr>
 </tbody></table>
 <h2 id="Mainnet-configuration"><a href="#Mainnet-configuration" class="headerlink" title="Mainnet configuration"></a>Mainnet configuration</h2><p>Finally, the main network, a.k.a. mainnet. It may come as no surprise, but to sync to the mainnet, the step and configurations are actually the same as for a <a href="#Testnet-configuration">test network</a>. The only major difference is that the <code>networkType</code> needs to be <code>custom</code> with the <code>networkId</code> set to <code>1</code>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mainnet: &#123;</span><br><span class="line">  networkType: &quot;custom&quot;,</span><br><span class="line">  networkId: 1,</span><br><span class="line">  syncMode: &quot;light&quot;,</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config/mainnet/password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mainnet: &#123;</span><br><span class="line">  networkType: &quot;custom&quot;,</span><br><span class="line">  networkId: 1,</span><br><span class="line">  syncMode: &quot;light&quot;,</span><br><span class="line">  accounts: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeAccounts: true,</span><br><span class="line">      password: &quot;config&#x2F;mainnet&#x2F;password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <div class="o-container-medium o-distance-l">
@@ -1030,79 +1032,26 @@ svg4everybody();
       </p>
     </div>
     <div class="c-footer__body">
-      <div class="o-grid">
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Resources</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="/docs/quick_start.html" class="u-link-ghost" title="Quick Start">Quick Start</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs" class="u-link-ghost" title="Documentation">Documentation</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/news" class="u-link-ghost" title="Blog">Blog</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/faq.html" class="u-link-ghost" title="FAQ">FAQ</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/troubleshooting.html" class="u-link-ghost" title="Troubleshooting">Troubleshooting</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Help</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://stackoverflow.com/questions/tagged/embark" target="_blank" rel="noopener" class="u-link-ghost" title="Embark Questions">Stack Overflow</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://gitter.im/embark-framework/Lobby" target="_blank" rel="noopener" class="u-link-ghost" title="Gitter">Gitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/issues" target="_blank" rel="noopener" class="u-link-ghost" title="Report issues">Report issues</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework/embark/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener" class="u-link-ghost" title="Code of Conduct">Code of Conduct</a>
-            </li>
-          </ul>
-        </div>
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-5">
-          <p class="c-category-title u-text-light">Community</p>
-          <ul class="o-list-bare">
-            <li class="o-list-bare__item">
-              <a href="https://github.com/embark-framework" target="_blank" rel="noopener" class="u-link-ghost" title="Github">Github</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener" class="u-link-ghost" title="Twitter">Twitter</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/docs/contributing.html" class="u-link-ghost" title="Contribute">Contribute</a>
-            </li>
-            <li class="o-list-bare__item">
-              <a href="/community/#team" class="u-link-ghost" title="Team">Team</a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-4">
+      <div class="o-grid">
+        <div class="o-grid__column--1-1 o-grid__column--medium-1-2 o-grid__column--large-1-6">
           <p class="c-category-title u-text-light">The Status Network</p>
-          <ul class="o-list-bare two-columns">
+          <ul class="o-list-bare six-columns">
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://status.im/" target="_blank">Status</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://keycard.tech/" target="_blank">Keycard</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://dap.ps/" target="_blank">dap.ps</a></li>
-            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.status.im/" target="_blank">Embark</a></li>
+            <li class="o-list-bare__item"><a class="u-link-ghost" href="https://embark.embarklabs.io/" target="_blank">Embark</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://subspace.status.im/" target="_blank">Subspace</a></li>
             <li class="o-list-bare__item"><a class="u-link-ghost" href="https://vac.dev/" target="_blank">Vac</a></li>
           </ul>
         </div>
       </div>
     </div>
+    
     <div class="c-footer__bottom">
       <p class="u-text-light">
         <a href="https://status.im/privacy-policy.html" title="Privacy Policy" target="_blank" class="u-text-light">Privacy Policy</a>
-        / © 2019 Embark
+        / © 2020 Embark
       </p>
     </div>
   </div>
@@ -1115,7 +1064,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://embark.status.im/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        'latest': 'https://embark.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
       };
     </script>
 
