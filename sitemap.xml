@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/28/embark-5-1/</loc>
+    
+    <lastmod>2020-01-28T15:27:21.143Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/docs/troubleshooting.html</loc>
     
     <lastmod>2020-01-19T20:56:53.015Z</lastmod>
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
     
     <lastmod>2020-01-19T20:56:52.653Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
+    <loc>https://embark.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
     
     <lastmod>2020-01-19T20:56:52.653Z</lastmod>
     
@@ -79,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/</loc>
+    <loc>https://embark.embarklabs.io/news/2018/10/27/how-to-create-a-token-factory-with-embark-part-2/</loc>
     
     <lastmod>2020-01-19T20:56:52.649Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2018/10/27/how-to-create-a-token-factory-with-embark-part-2/</loc>
+    <loc>https://embark.embarklabs.io/news/2018/09/27/how-to-create-a-token-factory-with-embark-part-1/</loc>
     
     <lastmod>2020-01-19T20:56:52.649Z</lastmod>
     
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://embark.embarklabs.io/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/</loc>
     
     <lastmod>2020-01-17T19:05:36.402Z</lastmod>
@@ -121,14 +121,21 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
     
     <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/</loc>
     
     <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     

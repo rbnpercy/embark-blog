@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Embark</title>
+  <title>Embark 5.1 | Embark</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.embarklabs.io/archives/2020/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2020/01/28/embark-5-1/index.html">
   <!-- Alternative links -->
   
 
@@ -151,10 +151,8 @@ svg4everybody();
 </head>
 
   <body>
-    
-  <header role="banner" class="c-header c-header--compact">
-  <span class="c-header__background"></span>
-  <div class="o-container c-header__content">
+    <header role="banner" class="c-header c-header--compact">
+  <div class="o-container">
     <div class="c-header__top">
       <a href="https://embarklabs.io" target="_blank" rel="noopener" title="Embark" class="c-logo c-logo--negative">Embark</a>
       <nav role="navigation" class="c-navigation">
@@ -209,21 +207,25 @@ svg4everybody();
     <div class="c-quick-search o-distance-m u-hidden-large-up">
       <input type="search" id="inp-search" placeholder="Search">
     </div>
+  </div>
+  <div class="o-container-medium">
     <div class="c-header__body">
-      <h1 class="c-title u-text-ghost">All posts</h1>
-
+      <h1 class="c-title u-text-ghost">Embark 5.1</h1>
       
-      <p class="c-subtitle o-distance-s">&nbsp;</p>
-      
-
-      
-      <div class="o-buttonbar">
-        
-          <a href="/news" class="c-button o-buttonbar__item" title="Back to blog">Back to blog</a>
-        
-        
-        
+      <div class="o-distance-m">
+        <div class="o-flex o-flex-center">
+          <span class="o-flex__item">
+            <img src="https://pbs.twimg.com/profile_images/928272512181563392/iDJdvy2k_400x400.jpg" class="c-avatar-small">
+          </span>
+          <p class="o-flex__item">
+            Written by <a href="https://twitter.com/iurimatias" target="_blank" rel="noopener" title="Iuri Matias on Twitter">Iuri Matias</a> on the <time class="u-text-ghost">28th January 2020</time>
+          </p>
+        </div>
       </div>
+      
+
+      
+
       
       
     </div>
@@ -231,74 +233,42 @@ svg4everybody();
 </header>
 
 
-
-<main role="main">
+<main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="u-link-uniform">Embark 5.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 5.1 release</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+    <h1 id="Embark-5-1"><a href="#Embark-5-1" class="headerlink" title="Embark 5.1"></a>Embark 5.1</h1><h2 id="Interfaces-amp-Libraries-Configuration"><a href="#Interfaces-amp-Libraries-Configuration" class="headerlink" title="Interfaces &amp; Libraries Configuration"></a>Interfaces &amp; Libraries Configuration</h2><p>Embark 5.1 adds two new configuration settings for Smart Contract configuration:</p>
+<p><code>interfaces</code> - Any Smart Contract that represent an interface or is used for inheritance<br><code>libraries</code> - Any Smart Contract that is used as a library</p>
+<p>This makes the configuration less redundant in cases where otherwise the deploy property has been set to false, such as:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy: &#123;</span><br><span class="line">  Ownable: &#123;</span><br><span class="line">    deploy: false</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>The above can now be done via:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interfaces: [&#39;Ownable&#39;],</span><br><span class="line">deploy: &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="u-link-uniform">Introducing Embark 5</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">13th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">About half a year after our last stable release, we've now published Embark version 5 with lots of features, improvements and fixes. Read on for more information!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+<p>Find the complete documentation <a href="https://framework.embarklabs.io/docs/contracts_configuration.html#Defining-interfaces" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="getEvmVersion-for-conditional-tests"><a href="#getEvmVersion-for-conditional-tests" class="headerlink" title="getEvmVersion for conditional tests"></a>getEvmVersion for conditional tests</h2><p>Embark tests now include a helper <code>getEvmVersion</code> that can be used to consult what EVM the tests are being run on. This is useful when you have certain tests that can only be run in a particular type of node, but you still want to be able to run tests everywhere without them breaking.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">it(&quot;cannot bid after 5 minutes&quot;, async () &#x3D;&gt; &#123;</span><br><span class="line">  const evmVersion &#x3D; await global.getEvmVersion();</span><br><span class="line">  if (evmVersion.indexOf(&quot;TestRPC&quot;) &#x3D;&#x3D;&#x3D; -1) return;</span><br><span class="line"></span><br><span class="line">  increaseTime(5000)</span><br><span class="line"></span><br><span class="line">  await assert.reverts(Auction.methods.bid(), &#123;from: web3.eth.defaultAccount&#125;, &#39;Returned error: VM Exception while processing transaction: cannot bid after auction expired&#39;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<h2 id="Nethermind-plugin"><a href="#Nethermind-plugin" class="headerlink" title="Nethermind plugin"></a>Nethermind plugin</h2><p>Embark now comes with a <a href="https://nethermind.io/" target="_blank" rel="noopener">Nethermind</a> plugin.<br>More info about the plugin can be found <a href="https://github.com/embarklabs/embark/tree/master/packages/plugins/nethermind" target="_blank" rel="noopener">here</a></p>
+<h2 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h2><p>Features<br>@embark/deployment: introduce interfaces and libraries configuration (73d0443)<br>@embark/nethermind: add Nethermind blockchain client plugin (6db8d87)<br>@embark/test-runner: expose evmClientVersion for conditional tests (e37d3f7)<br>@embark/testing: introduce proper request2 api for async/await (c947517)<br>@embark/testing: add missing APIs to register console commands and API calls (bef582d)<br>support Node.js v12.x and newer (c093cf8)</p>
+<p>Bug Fixes<br>@embark/cmd_controller: fix build command to escape on finish (e2767c2)<br>@embark/debugger: Prevent error if contract not tracked by Embark (1e1172e)<br>@embark/ens: fix Infura connection and testnet use of ENS (42bd3b7)<br>@embark/test-dapp: fix test_dapp broken for ENS resolve (f5849e0)<br>@embark/tests: Fix failing test with —node=embark (81af3af)<br>@embark/transaction-logger: Circular JSON log and unknown contract log level (5843a8e)<br>@embark/utils: fix deconstruct url to return port as an integer (4190d5e)<br>transaction-logger: fix circular dep issue with util.inspect (6f239f4)<br>@embark/embarkjs: change enableEthereum to not rely on returned accounts array (b8f93ea)<br>@embark/test: increase default gas limit to 8M so tests support bigger contracts (b6856b2)<br>@embark/ens: connect to web3 only with dappAutoEnable is true (e0ac539)<br>@embark/proxy: Parse rpcPort from config as integer (9f7c682)</p>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="u-link-uniform">Take Back the Web Hackathon is live!</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">9th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">The Embark Project is proud to be working with Gitcoin and the Ethereum Community Fund to grow the Ethereum ecosystem. This January we are sponsoring a #Takebacktheweb Hackathon with bounties and quests for people of all technical levels to get involved.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
   </section>
-  <div class="o-container o-distance o-center">
-    <a href="/news" class="c-button" title="Back to blog">Back to blog</a>
+  
+  
+
+  <div class="o-container-medium o-distance">
+    <div class="o-flex o-flex-space-between">
+  
+  <div class="o-flex__item">
+    <a href="/news/2020/01/13/announcing-embark-5/" class="c-button c-button--quite" title="Previous article">Previous</a>
   </div>
+  
+  
+</div>
+
+
+  </div>
+  
 </main>
 
 

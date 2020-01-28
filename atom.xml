@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://embark.embarklabs.io/"/>
-  <updated>2020-01-19T20:56:52.653Z</updated>
+  <updated>2020-01-28T15:27:21.143Z</updated>
   <id>https://embark.embarklabs.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Embark 5.1</title>
+    <link href="https://embark.embarklabs.io/news/2020/01/28/embark-5-1/"/>
+    <id>https://embark.embarklabs.io/news/2020/01/28/embark-5-1/</id>
+    <published>2020-01-28T05:00:00.000Z</published>
+    <updated>2020-01-28T15:27:21.143Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Embark-5-1"><a href="#Embark-5-1" class="headerlink" title="Embark 5.1"></a>Embark 5.1</h1><h2 id="Interfaces-amp-Libraries-Configuration"><a href="#Interfaces-amp-Libraries-Configuration" class="headerlink" title="Interfaces &amp; Libraries Configuration"></a>Interfaces &amp; Libraries Configuration</h2><p>Embark 5.1 adds two new configuration settings for Smart Contract configuration:</p><p><code>interfaces</code> - Any Smart Contract that represent an interface or is used for inheritance<br><code>libraries</code> - Any Smart Contract that is used as a library</p><p>This makes the configuration less redundant in cases where otherwise the deploy property has been set to false, such as:</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy: &#123;</span><br><span class="line">  Ownable: &#123;</span><br><span class="line">    deploy: false</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>The above can now be done via:</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interfaces: [&#39;Ownable&#39;],</span><br><span class="line">deploy: &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Find the complete documentation <a href="https://framework.embarklabs.io/docs/contracts_configuration.html#Defining-interfaces" target="_blank" rel="noopener">here</a>.</p><h2 id="getEvmVersion-for-conditional-tests"><a href="#getEvmVersion-for-conditional-tests" class="headerlink" title="getEvmVersion for conditional tests"></a>getEvmVersion for conditional tests</h2><p>Embark tests now include a helper <code>getEvmVersion</code> that can be used to consult what EVM the tests are being run on. This is useful when you have certain tests that can only be run in a particular type of node, but you still want to be able to run tests everywhere without them breaking.</p><p>For example:</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">it(&quot;cannot bid after 5 minutes&quot;, async () &#x3D;&gt; &#123;</span><br><span class="line">  const evmVersion &#x3D; await global.getEvmVersion();</span><br><span class="line">  if (evmVersion.indexOf(&quot;TestRPC&quot;) &#x3D;&#x3D;&#x3D; -1) return;</span><br><span class="line"></span><br><span class="line">  increaseTime(5000)</span><br><span class="line"></span><br><span class="line">  await assert.reverts(Auction.methods.bid(), &#123;from: web3.eth.defaultAccount&#125;, &#39;Returned error: VM Exception while processing transaction: cannot bid after auction expired&#39;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h2 id="Nethermind-plugin"><a href="#Nethermind-plugin" class="headerlink" title="Nethermind plugin"></a>Nethermind plugin</h2><p>Embark now comes with a <a href="https://nethermind.io/" target="_blank" rel="noopener">Nethermind</a> plugin.<br>More info about the plugin can be found <a href="https://github.com/embarklabs/embark/tree/master/packages/plugins/nethermind" target="_blank" rel="noopener">here</a></p><h2 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h2><p>Features<br>@embark/deployment: introduce interfaces and libraries configuration (73d0443)<br>@embark/nethermind: add Nethermind blockchain client plugin (6db8d87)<br>@embark/test-runner: expose evmClientVersion for conditional tests (e37d3f7)<br>@embark/testing: introduce proper request2 api for async/await (c947517)<br>@embark/testing: add missing APIs to register console commands and API calls (bef582d)<br>support Node.js v12.x and newer (c093cf8)</p><p>Bug Fixes<br>@embark/cmd_controller: fix build command to escape on finish (e2767c2)<br>@embark/debugger: Prevent error if contract not tracked by Embark (1e1172e)<br>@embark/ens: fix Infura connection and testnet use of ENS (42bd3b7)<br>@embark/test-dapp: fix test_dapp broken for ENS resolve (f5849e0)<br>@embark/tests: Fix failing test with —node=embark (81af3af)<br>@embark/transaction-logger: Circular JSON log and unknown contract log level (5843a8e)<br>@embark/utils: fix deconstruct url to return port as an integer (4190d5e)<br>transaction-logger: fix circular dep issue with util.inspect (6f239f4)<br>@embark/embarkjs: change enableEthereum to not rely on returned accounts array (b8f93ea)<br>@embark/test: increase default gas limit to 8M so tests support bigger contracts (b6856b2)<br>@embark/ens: connect to web3 only with dappAutoEnable is true (e0ac539)<br>@embark/proxy: Parse rpcPort from config as integer (9f7c682)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Embark-5-1&quot;&gt;&lt;a href=&quot;#Embark-5-1&quot; class=&quot;headerlink&quot; title=&quot;Embark 5.1&quot;&gt;&lt;/a&gt;Embark 5.1&lt;/h1&gt;&lt;h2 id=&quot;Interfaces-amp-Libraries-Configur
+      
+    
+    </summary>
+    
+    
+      <category term="announcements" scheme="https://embark.embarklabs.io/categories/announcements/"/>
+    
+      <category term="releases" scheme="https://embark.embarklabs.io/categories/announcements/releases/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Introducing Embark 5</title>
@@ -477,30 +503,6 @@
       
       
         &lt;h2 id=&quot;To-Update-to-2-6-0&quot;&gt;&lt;a href=&quot;#To-Update-to-2-6-0&quot; class=&quot;headerlink&quot; title=&quot;To Update to 2.6.0&quot;&gt;&lt;/a&gt;To Update to 2.6.0&lt;/h2&gt;&lt;p&gt;Embark
-      
-    
-    </summary>
-    
-    
-      <category term="announcements" scheme="https://embark.embarklabs.io/categories/announcements/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Embark 2.5.0</title>
-    <link href="https://embark.embarklabs.io/news/2017/06/28/embark-2-5-released/"/>
-    <id>https://embark.embarklabs.io/news/2017/06/28/embark-2-5-released/</id>
-    <published>2017-06-28T04:00:00.000Z</published>
-    <updated>2020-01-17T19:05:36.382Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="To-Update-to-2-5-0"><a href="#To-Update-to-2-5-0" class="headerlink" title="To Update to 2.5.0"></a>To Update to 2.5.0</h2><p>Embark’s npm package has changed from <code>embark-framework</code> to <code>embark</code>, this sometimes can create conflicts. To update, first uninstall embark-framework 1 to avoid any conflicts with <code>npm uninstall -g embark-framework</code> followed by <code>npm install -g embark</code></p><p>to update from 2.4.2:</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g embark@2.5</span><br></pre></td></tr></table></figure><p>afterwards make sure <code>embark version</code> returns <code>2.5.0</code>.</p><h2 id="In-this-release"><a href="#In-this-release" class="headerlink" title="In this release"></a>In this release</h2><p>This release updates to the lastest dependencies, fixes a few things and has a lot of work under the hood necessary for future releases.</p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><ul><li>support for geth 1.6.5</li><li>updated to use web3.js 0.19.11</li><li>updated to use solc 0.4.11</li></ul><h2 id="Misc-Bugfixes-and-Improvements"><a href="#Misc-Bugfixes-and-Improvements" class="headerlink" title="Misc Bugfixes and Improvements"></a>Misc Bugfixes and Improvements</h2><ul><li><code>embark new</code> will now prompt for the dapp name if not specified as <code>embark new &lt;yourDappName&gt;</code></li><li>embark.js: <code>ContractName.new()</code> as been added as an alias for <code>ContractName.deploy()</code></li><li>embark.js: a method to easily send ether to a contract has been added: <code>ContractName.send(value, unit, options)</code> e.g <code>ContractName.send(2, &quot;ether&quot;, {from: web3.eth.accounts[1]})</code></li><li>orbit: Fix for orbit to make it work if the blockchain component is disabled</li><li>orbit: Use default config for orbit it none is specified in the config file</li><li>Demo app now has warning message for incompatible whisper versions</li><li>the JSON files of the contracts are now being outputted at dist/contracts/ (experimental)</li><li>whisper: Dashboard now displays the whisper version of the node</li><li>plugin API: extensions can now also be added as directories within the dapp directory</li><li>plugin API: plugins can now register a component to be displayed in the dashboard. e.g:</li></ul><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">embark.registerServiceCheck(<span class="string">'PluginService'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (someFunctionThatChecksTheService()) &#123;</span><br><span class="line">      cb(&#123;<span class="attr">name</span>: <span class="string">"MyServiceName"</span>, <span class="attr">status</span>: <span class="string">"on"</span>&#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    cb(&#123;<span class="attr">name</span>: <span class="string">"MyServiceName"</span>, <span class="attr">status</span>: <span class="string">"off"</span>&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="Thank-you"><a href="#Thank-you" class="headerlink" title="Thank you"></a>Thank you</h2><p>A big thanks to all that contributed to this release including <a href="https://github.com/nathanph" target="_blank" rel="noopener">Nathan Hernandez</a>, <a href="https://github.com/atfornes" target="_blank" rel="noopener">Antonio Tenorio-Fornés</a>, <a href="https://github.com/jonjonsonjr" target="_blank" rel="noopener">Jon Johnson</a>, Andy Nogueira,  <a href="https://github.com/roo2" target="_blank" rel="noopener">roo2</a>, <a href="https://github.com/carlmon" target="_blank" rel="noopener">Carl Mönnig</a>, <a href="https://github.com/michaeljyeates" target="_blank" rel="noopener">Michael Yeates</a>, <a href="https://github.com/toadkicker" target="_blank" rel="noopener">Todd Baur</a>, <a href="https://github.com/imtypist" target="_blank" rel="noopener">黄俊钦</a>, <a href="https://github.com/RamiroMoreira" target="_blank" rel="noopener">Ramiro Moreira</a>, <a href="https://github.com/greggdourgarian" target="_blank" rel="noopener">gregg dourgarian</a></p><h2 id="Chatroom"><a href="#Chatroom" class="headerlink" title="Chatroom"></a>Chatroom</h2><p>To discuss about Embark or Dapp development, please <a href="https://gitter.im/iurimatias/embark-framework" target="_blank" rel="noopener">join us at the gitter channel</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;To-Update-to-2-5-0&quot;&gt;&lt;a href=&quot;#To-Update-to-2-5-0&quot; class=&quot;headerlink&quot; title=&quot;To Update to 2.5.0&quot;&gt;&lt;/a&gt;To Update to 2.5.0&lt;/h2&gt;&lt;p&gt;Embark
       
     
     </summary>
