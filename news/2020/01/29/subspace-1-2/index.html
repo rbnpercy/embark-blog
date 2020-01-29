@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Embark</title>
+  <title>Subspace 1.2 | Embark</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://embark.embarklabs.io/archives/2020/01/index.html">
+  <link rel="canonical" href="https://embark.embarklabs.io/news/2020/01/29/subspace-1-2/index.html">
   <!-- Alternative links -->
   
 
@@ -151,10 +151,8 @@ svg4everybody();
 </head>
 
   <body>
-    
-  <header role="banner" class="c-header c-header--compact">
-  <span class="c-header__background"></span>
-  <div class="o-container c-header__content">
+    <header role="banner" class="c-header c-header--compact">
+  <div class="o-container">
     <div class="c-header__top">
       <a href="https://embarklabs.io" target="_blank" rel="noopener" title="Embark" class="c-logo c-logo--negative">Embark</a>
       <nav role="navigation" class="c-navigation">
@@ -209,21 +207,25 @@ svg4everybody();
     <div class="c-quick-search o-distance-m u-hidden-large-up">
       <input type="search" id="inp-search" placeholder="Search">
     </div>
+  </div>
+  <div class="o-container-medium">
     <div class="c-header__body">
-      <h1 class="c-title u-text-ghost">All posts</h1>
-
+      <h1 class="c-title u-text-ghost">Subspace 1.2</h1>
       
-      <p class="c-subtitle o-distance-s">&nbsp;</p>
-      
-
-      
-      <div class="o-buttonbar">
-        
-          <a href="/news" class="c-button o-buttonbar__item" title="Back to blog">Back to blog</a>
-        
-        
-        
+      <div class="o-distance-m">
+        <div class="o-flex o-flex-center">
+          <span class="o-flex__item">
+            <img src="https://pbs.twimg.com/profile_images/928272512181563392/iDJdvy2k_400x400.jpg" class="c-avatar-small">
+          </span>
+          <p class="o-flex__item">
+            Written by <a href="https://twitter.com/iurimatias" target="_blank" rel="noopener" title="Iuri Matias on Twitter">Iuri Matias</a> on the <time class="u-text-ghost">29th January 2020</time>
+          </p>
+        </div>
       </div>
+      
+
+      
+
       
       
     </div>
@@ -231,94 +233,40 @@ svg4everybody();
 </header>
 
 
-
-<main role="main">
+<main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/29/subspace-1-2/" title="Read more" class="u-link-uniform">Subspace 1.2</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">29th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Subspace 1.2 release - now with HttpProvider support & GraphQL Example</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/29/subspace-1-2/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+    <h1 id="Subspace-1-2"><a href="#Subspace-1-2" class="headerlink" title="Subspace 1.2"></a>Subspace 1.2</h1><h3 id="New-Org"><a href="#New-Org" class="headerlink" title="New Org"></a>New Org</h3><p>Subspace is now under the <em>@embarklabs</em> Org. Versions under @status-im Org have been deprecated.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Using npm</span></span><br><span class="line">npm install --save @embarklabs/subspace</span><br><span class="line"></span><br><span class="line"><span class="comment"># Using yarn</span></span><br><span class="line">yarn add @embarklabs/subspace</span><br></pre></td></tr></table></figure>
 
+<h3 id="HttpProvider-support"><a href="#HttpProvider-support" class="headerlink" title="HttpProvider support"></a>HttpProvider support</h3><p>Previously Subspace only worked with WebSockets for event subscriptions, and polled for changes only if the <code>callInterval</code> option was specified, displaying a warning indicating that the use of providers other than <code>WebSocketProvider</code> was discouraged. </p>
+<p>With this release, Subspace will identify if the provider supports subscriptions and use them automatically. If no subscriptions are available, it will assume the provider does not support them and poll the contract for new changes periodically.</p>
+<p>Subscriptions can be disabled with the <code>disableSubscriptions</code> option.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> subspace = <span class="keyword">new</span> Subspace(&#123;<span class="attr">disableSubscriptions</span>: <span class="literal">true</span>&#125;)</span><br></pre></td></tr></table></figure>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="u-link-uniform">Embark 5.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 5.1 release</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+<h3 id="GraphQL-Example"><a href="#GraphQL-Example" class="headerlink" title="GraphQL Example"></a>GraphQL Example</h3><p>An example DApp using GraphQL with Subspace can now be found at <a href="https://github.com/embarklabs/subspace/tree/master/examples/react-graphql-example1" target="_blank" rel="noopener">https://github.com/embarklabs/subspace/tree/master/examples/react-graphql-example1</a> . </p>
+<h3 id="Bug-fixes"><a href="#Bug-fixes" class="headerlink" title="Bug fixes"></a>Bug fixes</h3><ul>
+<li>Fixed obtaining the <code>from</code> address when instantiating a Web3 Contract with Subspace tracking functionality</li>
+<li><code>.track()</code> is added only to event names as they’re specified in the ABI. Tracking events by signature is not allowed</li>
+</ul>
+<h3 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h3><p>Subspace and the entire Embark labs organization are open source. As such we welcome contributions and input from the community using the product. </p>
 
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="u-link-uniform">Introducing Embark 5</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">13th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">About half a year after our last stable release, we've now published Embark version 5 with lots of features, improvements and fixes. Read on for more information!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="u-link-uniform">Take Back the Web Hackathon is live!</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">9th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">The Embark Project is proud to be working with Gitcoin and the Ethereum Community Fund to grow the Ethereum ecosystem. This January we are sponsoring a #Takebacktheweb Hackathon with bounties and quests for people of all technical levels to get involved.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
   </section>
-  <div class="o-container o-distance o-center">
-    <a href="/news" class="c-button" title="Back to blog">Back to blog</a>
+  
+  
+
+  <div class="o-container-medium o-distance">
+    <div class="o-flex o-flex-space-between">
+  
+  <div class="o-flex__item">
+    <a href="/news/2020/01/28/embark-5-1/" class="c-button c-button--quite" title="Previous article">Previous</a>
   </div>
+  
+  
+</div>
+
+
+  </div>
+  
 </main>
 
 

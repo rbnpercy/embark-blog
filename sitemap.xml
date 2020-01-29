@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/29/subspace-1-2/</loc>
+    
+    <lastmod>2020-01-29T15:39:58.267Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/news/2020/01/28/embark-5-1/</loc>
     
-    <lastmod>2020-01-28T15:27:21.143Z</lastmod>
+    <lastmod>2020-01-29T15:32:12.776Z</lastmod>
     
   </url>
   
@@ -128,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/03/19/introducing-embark-4/</loc>
     
     <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
@@ -142,14 +149,28 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/03/19/introducing-embark-4/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
     
     <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2019/01/23/building-smart-contract-only-dapps/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2018/06/20/embark-3-1-released/</loc>
     
     <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
@@ -163,21 +184,7 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/01/23/building-smart-contract-only-dapps/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://embark.embarklabs.io/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://embark.embarklabs.io/news/2018/06/20/embark-3-1-released/</loc>
     
     <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
@@ -282,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/docs/embark_commands.html</loc>
+    <loc>https://embark.embarklabs.io/index.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/environments.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
@@ -450,7 +457,7 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/docs/environments.html</loc>
+    <loc>https://embark.embarklabs.io/docs/embark_commands.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
