@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2020/01/29/subspace-1-2/</loc>
+    <loc>https://embark.embarklabs.io/news/2020/01/30/dapp-frontend-security/</loc>
     
-    <lastmod>2020-01-29T19:58:57.845Z</lastmod>
+    <lastmod>2020-01-30T14:17:39.506Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2020/01/28/embark-5-1/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
     
-    <lastmod>2020-01-29T19:58:57.844Z</lastmod>
+    <lastmod>2020-01-30T14:17:39.505Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/29/subspace-1-2/</loc>
+    
+    <lastmod>2020-01-30T14:17:36.333Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/28/dapp-frontend-security/</loc>
+    
+    <lastmod>2020-01-28T19:10:46.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/27/embark-5-1/</loc>
+    
+    <lastmod>2020-01-28T17:55:09.597Z</lastmod>
     
   </url>
   
@@ -65,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
-    
-    <lastmod>2020-01-19T20:56:52.653Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://embark.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
     
     <lastmod>2020-01-19T20:56:52.653Z</lastmod>
@@ -121,6 +135,13 @@
   </url>
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/</loc>
     
     <lastmod>2020-01-17T19:05:36.402Z</lastmod>
@@ -128,9 +149,9 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/</loc>
+    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
     
-    <lastmod>2020-01-17T19:05:36.402Z</lastmod>
+    <lastmod>2020-01-17T19:05:36.394Z</lastmod>
     
   </url>
   
@@ -149,28 +170,7 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.394Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://embark.embarklabs.io/news/2019/01/23/building-smart-contract-only-dapps/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://embark.embarklabs.io/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/</loc>
-    
-    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://embark.embarklabs.io/news/2018/06/20/embark-3-1-released/</loc>
     
     <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
@@ -184,7 +184,21 @@
   </url>
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/</loc>
+    
+    <lastmod>2020-01-17T19:05:36.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://embark.embarklabs.io/news/2018/06/20/embark-3-1-released/</loc>
     
     <lastmod>2020-01-17T19:05:36.386Z</lastmod>
     
@@ -282,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/docs/dashboard.html</loc>
+    <loc>https://embark.embarklabs.io/index.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/index.html</loc>
+    <loc>https://embark.embarklabs.io/docs/embark_commands.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
@@ -457,7 +471,7 @@
   </url>
   
   <url>
-    <loc>https://embark.embarklabs.io/docs/embark_commands.html</loc>
+    <loc>https://embark.embarklabs.io/docs/dashboard.html</loc>
     
     <lastmod>2020-01-17T19:00:03.900Z</lastmod>
     
