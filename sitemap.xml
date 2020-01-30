@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://embark.embarklabs.io/news/2020/01/28/embark-5-1/</loc>
+    
+    <lastmod>2020-01-30T14:59:01.010Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://embark.embarklabs.io/news/2020/01/30/dapp-frontend-security/</loc>
     
     <lastmod>2020-01-30T14:52:47.141Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://embark.embarklabs.io/news/2020/01/28/dapp-frontend-security/</loc>
     
     <lastmod>2020-01-28T19:10:46.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://embark.embarklabs.io/news/2020/01/27/embark-5-1/</loc>
-    
-    <lastmod>2020-01-28T17:55:09.597Z</lastmod>
     
   </url>
   
