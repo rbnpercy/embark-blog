@@ -148,11 +148,7 @@
 
 svg4everybody();
 </script>
-</head>
-
-  <body>
-
-    <meta name="description" content="Embark 5.1Interfaces &amp; Libraries ConfigurationEmbark 5.1 adds two new configuration settings for Smart Contract configuration: interfaces - Any Smart Contract that represent an interface or is use">
+<meta name="description" content="Embark 5.1Interfaces &amp; Libraries ConfigurationEmbark 5.1 adds two new configuration settings for Smart Contract configuration: interfaces - Any Smart Contract that represent an interface or is use">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Embark 5.1">
 <meta property="og:url" content="https://framework.embarklabs.io/news/2020/01/28/embark-5-1/index.html">
@@ -160,9 +156,12 @@ svg4everybody();
 <meta property="og:description" content="Embark 5.1Interfaces &amp; Libraries ConfigurationEmbark 5.1 adds two new configuration settings for Smart Contract configuration: interfaces - Any Smart Contract that represent an interface or is use">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-28T05:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-30T14:59:01.010Z">
+<meta property="article:modified_time" content="2020-01-30T16:21:55.562Z">
 <meta property="article:author" content="Embark">
 <meta name="twitter:card" content="summary">
+</head>
+
+  <body>
 
     <header role="banner" class="c-header c-header--compact">
   <div class="o-container">
@@ -256,7 +255,7 @@ svg4everybody();
 <p>The above can now be done via:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interfaces: [&#39;Ownable&#39;],</span><br><span class="line">deploy: &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Find the complete documentation <a href="https://framework.embarklabs.io/docs/contracts_configuration.html#Defining-interfaces" target="_blank" rel="noopener">here</a>.</p>
+<p>Find the complete documentation <a href="https://framework.embarklabs.io/docs/contracts_configuration.html#Defining-interfaces">here</a>.</p>
 <h2 id="getEvmVersion-for-conditional-tests"><a href="#getEvmVersion-for-conditional-tests" class="headerlink" title="getEvmVersion for conditional tests"></a>getEvmVersion for conditional tests</h2><p>Embark tests now include a helper <code>getEvmVersion</code> that can be used to consult what EVM the tests are being run on. This is useful when you have certain tests that can only be run in a particular type of node, but you still want to be able to run tests everywhere without them breaking.</p>
 <p>For example:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">it(&quot;cannot bid after 5 minutes&quot;, async () &#x3D;&gt; &#123;</span><br><span class="line">  const evmVersion &#x3D; await global.getEvmVersion();</span><br><span class="line">  if (evmVersion.indexOf(&quot;TestRPC&quot;) &#x3D;&#x3D;&#x3D; -1) return;</span><br><span class="line"></span><br><span class="line">  increaseTime(5000)</span><br><span class="line"></span><br><span class="line">  await assert.reverts(Auction.methods.bid(), &#123;from: web3.eth.defaultAccount&#125;, &#39;Returned error: VM Exception while processing transaction: cannot bid after auction expired&#39;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
