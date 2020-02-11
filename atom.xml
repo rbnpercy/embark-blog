@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://framework.embarklabs.io/"/>
-  <updated>2020-02-05T20:45:33.257Z</updated>
+  <updated>2020-02-11T18:34:51.208Z</updated>
   <id>https://framework.embarklabs.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Subspace 1.3</title>
+    <link href="https://framework.embarklabs.io/news/2020/02/11/subspace-1-3/"/>
+    <id>https://framework.embarklabs.io/news/2020/02/11/subspace-1-3/</id>
+    <published>2020-02-11T05:00:00.000Z</published>
+    <updated>2020-02-11T18:34:51.208Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Subspace-1-3"><a href="#Subspace-1-3" class="headerlink" title="Subspace 1.3"></a>Subspace 1.3</h1><p>New to subspace? Check out the website at <a href="http://subspace.embarklabs.io/" target="_blank" rel="noopener">http://subspace.embarklabs.io/</a></p><h3 id="New-methods-available-to-track-blocks-gas-price-and-blocktime"><a href="#New-methods-available-to-track-blocks-gas-price-and-blocktime" class="headerlink" title="New methods available to track blocks, gas price and blocktime"></a>New methods available to track blocks, gas price and blocktime</h3><h4 id="trackBlock"><a href="#trackBlock" class="headerlink" title="trackBlock()"></a><code>trackBlock()</code></h4><p>Returns the block information for any new block as soon as they are mined. It’s the reactive equivalent to <code>web3.eth.getBlock(&quot;latest&quot;)</code>.</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackBlock().subscribe(<span class="function"><span class="params">block</span> =&gt;</span> <span class="built_in">console</span>.log(block));</span><br></pre></td></tr></table></figure><h4 id="trackBlockNumber"><a href="#trackBlockNumber" class="headerlink" title="trackBlockNumber()"></a><code>trackBlockNumber()</code></h4><p>Returns the latest block number. It’s the reactive equivalent to <code>web3.eth.getBlockNumber</code>.</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackBlockNumber().subscribe(<span class="function"><span class="params">blockNumber</span> =&gt;</span> <span class="built_in">console</span>.log(blockNumber));</span><br></pre></td></tr></table></figure><h4 id="trackGasPrice"><a href="#trackGasPrice" class="headerlink" title="trackGasPrice()"></a><code>trackGasPrice()</code></h4><p>Returns the current gas price oracle. It’s the reactive equivalent to <code>web3.eth.getGasPrice</code>.</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackGasPrice().subscribe(<span class="function"><span class="params">gasPrice</span> =&gt;</span> <span class="built_in">console</span>.log(gasPrice));</span><br></pre></td></tr></table></figure><h4 id="trackAverageBlocktime"><a href="#trackAverageBlocktime" class="headerlink" title="trackAverageBlocktime()"></a><code>trackAverageBlocktime()</code></h4><p>Returns the moving average block time taking in account the latest 10 blocks. The time is returned in milliseconds:</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackAverageBlocktime().subscribe(<span class="function"><span class="params">blocktimeMS</span> =&gt;</span> <span class="built_in">console</span>.log(blocktimeMS));</span><br></pre></td></tr></table></figure><h3 id="Bug-fixes"><a href="#Bug-fixes" class="headerlink" title="Bug fixes"></a>Bug fixes</h3><ul><li>Web3 subscriptions are reused, which means that calling a track method with the same parameters more than once will not create a duplicate subscription. </li></ul><h3 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h3><p>Subspace and the entire Embark labs organization are open source. As such we welcome contributions and input from the community using the product. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Subspace-1-3&quot;&gt;&lt;a href=&quot;#Subspace-1-3&quot; class=&quot;headerlink&quot; title=&quot;Subspace 1.3&quot;&gt;&lt;/a&gt;Subspace 1.3&lt;/h1&gt;&lt;p&gt;New to subspace? Check out the
+      
+    
+    </summary>
+    
+    
+      <category term="announcements" scheme="https://framework.embarklabs.io/categories/announcements/"/>
+    
+      <category term="releases" scheme="https://framework.embarklabs.io/categories/announcements/releases/"/>
+    
+      <category term="subspace" scheme="https://framework.embarklabs.io/categories/announcements/releases/subspace/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>DApp Frontend Security</title>
@@ -490,30 +518,6 @@
     
     
       <category term="tutorials" scheme="https://framework.embarklabs.io/categories/tutorials/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Embark by Status 3.1</title>
-    <link href="https://framework.embarklabs.io/news/2018/06/20/embark-3-1-released/"/>
-    <id>https://framework.embarklabs.io/news/2018/06/20/embark-3-1-released/</id>
-    <published>2018-06-20T04:00:00.000Z</published>
-    <updated>2020-01-30T14:39:38.960Z</updated>
-    
-    <content type="html"><![CDATA[<p>More info can be found in the <a href="https://blog.status.im/embark-3-1-planet-express-60493ca0ad79" target="_blank" rel="noopener">medium post</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;More info can be found in the &lt;a href=&quot;https://blog.status.im/embark-3-1-planet-express-60493ca0ad79&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;medi
-      
-    
-    </summary>
-    
-    
-      <category term="announcements" scheme="https://framework.embarklabs.io/categories/announcements/"/>
     
     
   </entry>

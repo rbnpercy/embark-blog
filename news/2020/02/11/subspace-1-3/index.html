@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Embark</title>
+  <title>Subspace 1.3 | Embark</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://framework.embarklabs.io/categories/announcements/index.html">
+  <link rel="canonical" href="https://framework.embarklabs.io/news/2020/02/11/subspace-1-3/index.html">
   <!-- Alternative links -->
   
 
@@ -147,23 +147,23 @@
 
 svg4everybody();
 </script>
-<meta name="description" content="Embark is a simple &amp; powerful framework for decentralized applications">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Embark">
-<meta property="og:url" content="https://framework.embarklabs.io/categories/announcements/index.html">
+<meta name="description" content="Subspace 1.3New to subspace? Check out the website at http:&#x2F;&#x2F;subspace.embarklabs.io&#x2F; New methods available to track blocks, gas price and blocktimetrackBlock()Returns the block information for any new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Subspace 1.3">
+<meta property="og:url" content="https://framework.embarklabs.io/news/2020/02/11/subspace-1-3/index.html">
 <meta property="og:site_name" content="Embark">
-<meta property="og:description" content="Embark is a simple &amp; powerful framework for decentralized applications">
+<meta property="og:description" content="Subspace 1.3New to subspace? Check out the website at http:&#x2F;&#x2F;subspace.embarklabs.io&#x2F; New methods available to track blocks, gas price and blocktimetrackBlock()Returns the block information for any new">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-11T05:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-11T18:34:51.208Z">
 <meta property="article:author" content="Embark">
 <meta name="twitter:card" content="summary">
 </head>
 
   <body>
 
-    
-  <header role="banner" class="c-header c-header--compact">
-  <span class="c-header__background"></span>
-  <div class="o-container c-header__content">
+    <header role="banner" class="c-header c-header--compact">
+  <div class="o-container">
     <div class="c-header__top">
       <a href="https://embarklabs.io" target="_blank" rel="noopener" title="Embark" class="c-logo c-logo--negative">Embark</a>
       <nav role="navigation" class="c-navigation">
@@ -218,21 +218,25 @@ svg4everybody();
     <div class="c-quick-search o-distance-m u-hidden-large-up">
       <input type="search" id="inp-search" placeholder="Search">
     </div>
+  </div>
+  <div class="o-container-medium">
     <div class="c-header__body">
-      <h1 class="c-title u-text-ghost">Categories: Announcements</h1>
-
+      <h1 class="c-title u-text-ghost">Subspace 1.3</h1>
       
-      <p class="c-subtitle o-distance-s">&nbsp;</p>
-      
-
-      
-      <div class="o-buttonbar">
-        
-          <a href="/news" class="c-button o-buttonbar__item" title="&larr; Back to blog">&larr; Back to blog</a>
-        
-        
-        
+      <div class="o-distance-m">
+        <div class="o-flex o-flex-center">
+          <span class="o-flex__item">
+            <img src="https://pbs.twimg.com/profile_images/1063160577973866496/aM313uHG_400x400.jpg" class="c-avatar-small">
+          </span>
+          <p class="o-flex__item">
+            Written by <a href="https://twitter.com/richardramos_me" target="_blank" rel="noopener" title="Richard Ramos on Twitter">Richard Ramos</a> on the <time class="u-text-ghost">11th February 2020</time>
+          </p>
+        </div>
       </div>
+      
+
+      
+
       
       
     </div>
@@ -240,234 +244,43 @@ svg4everybody();
 </header>
 
 
-
-<main role="main">
+<main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/02/11/subspace-1-3/" title="Read more" class="u-link-uniform">Subspace 1.3</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">11th February 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Subspace 1.3 release - new track methods trackBlock, trackBlockNumber, trackGasPrice, trackAverageBlocktime</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/02/11/subspace-1-3/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+    <h1 id="Subspace-1-3"><a href="#Subspace-1-3" class="headerlink" title="Subspace 1.3"></a>Subspace 1.3</h1><p>New to subspace? Check out the website at <a href="http://subspace.embarklabs.io/" target="_blank" rel="noopener">http://subspace.embarklabs.io/</a></p>
+<h3 id="New-methods-available-to-track-blocks-gas-price-and-blocktime"><a href="#New-methods-available-to-track-blocks-gas-price-and-blocktime" class="headerlink" title="New methods available to track blocks, gas price and blocktime"></a>New methods available to track blocks, gas price and blocktime</h3><h4 id="trackBlock"><a href="#trackBlock" class="headerlink" title="trackBlock()"></a><code>trackBlock()</code></h4><p>Returns the block information for any new block as soon as they are mined. It’s the reactive equivalent to <code>web3.eth.getBlock(&quot;latest&quot;)</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackBlock().subscribe(<span class="function"><span class="params">block</span> =&gt;</span> <span class="built_in">console</span>.log(block));</span><br></pre></td></tr></table></figure>
 
+<h4 id="trackBlockNumber"><a href="#trackBlockNumber" class="headerlink" title="trackBlockNumber()"></a><code>trackBlockNumber()</code></h4><p>Returns the latest block number. It’s the reactive equivalent to <code>web3.eth.getBlockNumber</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackBlockNumber().subscribe(<span class="function"><span class="params">blockNumber</span> =&gt;</span> <span class="built_in">console</span>.log(blockNumber));</span><br></pre></td></tr></table></figure>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/29/subspace-1-2/" title="Read more" class="u-link-uniform">Subspace 1.2</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">29th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Subspace 1.2 release - now with HttpProvider support & GraphQL Example</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/29/subspace-1-2/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+<h4 id="trackGasPrice"><a href="#trackGasPrice" class="headerlink" title="trackGasPrice()"></a><code>trackGasPrice()</code></h4><p>Returns the current gas price oracle. It’s the reactive equivalent to <code>web3.eth.getGasPrice</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackGasPrice().subscribe(<span class="function"><span class="params">gasPrice</span> =&gt;</span> <span class="built_in">console</span>.log(gasPrice));</span><br></pre></td></tr></table></figure>
 
+<h4 id="trackAverageBlocktime"><a href="#trackAverageBlocktime" class="headerlink" title="trackAverageBlocktime()"></a><code>trackAverageBlocktime()</code></h4><p>Returns the moving average block time taking in account the latest 10 blocks. The time is returned in milliseconds:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">subspace.trackAverageBlocktime().subscribe(<span class="function"><span class="params">blocktimeMS</span> =&gt;</span> <span class="built_in">console</span>.log(blocktimeMS));</span><br></pre></td></tr></table></figure>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="u-link-uniform">Embark 5.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 5.1 release</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/28/embark-5-1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+<h3 id="Bug-fixes"><a href="#Bug-fixes" class="headerlink" title="Bug fixes"></a>Bug fixes</h3><ul>
+<li>Web3 subscriptions are reused, which means that calling a track method with the same parameters more than once will not create a duplicate subscription. </li>
+</ul>
+<h3 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h3><p>Subspace and the entire Embark labs organization are open source. As such we welcome contributions and input from the community using the product. </p>
 
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="u-link-uniform">Introducing Embark 5</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">13th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">About half a year after our last stable release, we've now published Embark version 5 with lots of features, improvements and fixes. Read on for more information!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/13/announcing-embark-5/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="u-link-uniform">Take Back the Web Hackathon is live!</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">9th January 2020</p>
-  
-  <p class="c-box__subtitle u-text-light">The Embark Project is proud to be working with Gitcoin and the Ethereum Community Fund to grow the Ethereum ecosystem. This January we are sponsoring a #Takebacktheweb Hackathon with bounties and quests for people of all technical levels to get involved.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2020/01/09/take-back-the-web-hackathon/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/07/23/whats-new-in-embark-4.1/" title="Read more" class="u-link-uniform">What's new in Embark 4.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">23rd July 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 4.1 is out and in this article we'll be looking into some of new features.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/07/23/whats-new-in-embark-4.1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/03/19/introducing-embark-4/" title="Read more" class="u-link-uniform">Introducing Embark 4.0 - Cockpit, Debugger and more</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">19th March 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 4.0 is finally here! Check out what the greatest release yet has to offer!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/03/19/introducing-embark-4/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2018/06/20/embark-3-1-released/" title="Read more" class="u-link-uniform">Embark by Status 3.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">20th June 2018</p>
-  
-  <p class="c-box__subtitle u-text-light">In this article we're going to explore what the 3.1 release of Embark has to offer!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2018/06/20/embark-3-1-released/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2018/05/04/embark-3-0-released/" title="Read more" class="u-link-uniform">Embark by Status 3.0</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">4th May 2018</p>
-  
-  <p class="c-box__subtitle u-text-light">We're happy to announce that Embark 3.0 has been released! Read on for what's inside!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2018/05/04/embark-3-0-released/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2017/10/25/embark-2-6-released/" title="Read more" class="u-link-uniform">Embark 2.6.0 - web3.js 1.0, any version of web3.js & solc. Whisper 5 & much more</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">25th October 2017</p>
-  
-  <p class="c-box__subtitle u-text-light"></p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2017/10/25/embark-2-6-released/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2017/06/28/embark-2-5-released/" title="Read more" class="u-link-uniform">Embark 2.5.0</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th June 2017</p>
-  
-  <p class="c-box__subtitle u-text-light">Today we're excited to announce the release of Embark 2.5.0! Read on for what's in it.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2017/06/28/embark-2-5-released/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
   </section>
-  <div class="o-container o-distance o-center">
-    <a href="/news" class="c-button" title="Back to blog">Back to blog</a>
+  
+  
+
+  <div class="o-container-medium o-distance">
+    <div class="o-flex o-flex-space-between">
+  
+  <div class="o-flex__item">
+    <a href="/news/2020/01/30/dapp-frontend-security/" class="c-button c-button--quite" title="Previous article">Previous</a>
   </div>
+  
+  
+</div>
+
+
+  </div>
+  
 </main>
 
 
