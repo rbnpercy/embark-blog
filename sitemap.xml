@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://framework.embarklabs.io/news/2020/02/24/wasm-ewasm-what-and-why/</loc>
+    
+    <lastmod>2020-02-24T19:03:23.373Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://framework.embarklabs.io/news/2020/02/19/embark-5-2-release/</loc>
     
     <lastmod>2020-02-19T17:23:19.629Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://framework.embarklabs.io/news/2019/12/08/web3-what-are-your-options/</loc>
+    
+    <lastmod>2020-02-19T01:37:51.171Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://framework.embarklabs.io/news/2020/01/29/dapp-frontend-security/</loc>
+    
+    <lastmod>2020-02-19T01:36:27.492Z</lastmod>
     
   </url>
   
@@ -23,23 +44,16 @@
   </url>
   
   <url>
-    <loc>https://framework.embarklabs.io/news/2019/12/09/web3-what-are-your-options/</loc>
-    
-    <lastmod>2020-02-05T20:45:33.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://framework.embarklabs.io/news/2020/01/30/dapp-frontend-security/</loc>
-    
-    <lastmod>2020-02-05T20:45:33.257Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://framework.embarklabs.io/news/2020/01/28/embark-5-1/</loc>
     
     <lastmod>2020-01-30T16:21:23.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://framework.embarklabs.io/docs/blockchain_configuration.html</loc>
+    
+    <lastmod>2020-01-30T15:44:21.688Z</lastmod>
     
   </url>
   
@@ -58,14 +72,7 @@
   </url>
   
   <url>
-    <loc>https://framework.embarklabs.io/docs/blockchain_configuration.html</loc>
-    
-    <lastmod>2020-01-30T15:44:21.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://framework.embarklabs.io/news/2019/03/18/upgrading-to-embark-4/</loc>
+    <loc>https://framework.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
     
     <lastmod>2020-01-30T15:44:21.680Z</lastmod>
     
@@ -79,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://framework.embarklabs.io/news/2020/01/13/announcing-embark-5/</loc>
+    <loc>https://framework.embarklabs.io/news/2019/07/23/whats-new-in-embark-4.1/</loc>
     
     <lastmod>2020-01-30T15:44:21.680Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://framework.embarklabs.io/news/2019/07/23/whats-new-in-embark-4.1/</loc>
+    <loc>https://framework.embarklabs.io/news/2019/03/18/upgrading-to-embark-4/</loc>
     
     <lastmod>2020-01-30T15:44:21.680Z</lastmod>
     
@@ -101,13 +108,6 @@
   
   <url>
     <loc>https://framework.embarklabs.io/docs/creating_plugins.html</loc>
-    
-    <lastmod>2020-01-30T14:39:39.164Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://framework.embarklabs.io/docs/storage_deployment.html</loc>
     
     <lastmod>2020-01-30T14:39:39.164Z</lastmod>
     
@@ -185,6 +185,13 @@
   
   <url>
     <loc>https://framework.embarklabs.io/docs/plugin_reference.html</loc>
+    
+    <lastmod>2020-01-30T14:39:39.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://framework.embarklabs.io/docs/webpack.html</loc>
     
     <lastmod>2020-01-30T14:39:39.164Z</lastmod>
     
@@ -303,7 +310,7 @@
   </url>
   
   <url>
-    <loc>https://framework.embarklabs.io/docs/webpack.html</loc>
+    <loc>https://framework.embarklabs.io/docs/storage_deployment.html</loc>
     
     <lastmod>2020-01-30T14:39:39.164Z</lastmod>
     

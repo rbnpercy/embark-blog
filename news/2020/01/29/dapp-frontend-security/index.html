@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://framework.embarklabs.io/news/2020/01/30/dapp-frontend-security/index.html">
+  <link rel="canonical" href="https://framework.embarklabs.io/news/2020/01/29/dapp-frontend-security/index.html">
   <!-- Alternative links -->
   
 
@@ -147,17 +147,17 @@
 
 svg4everybody();
 </script>
-<meta name="description" content="IntroductionThis article is the second in my series of articles based on the frontend of the decentralised web.  We’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side, frontend se">
+<meta name="description" content="This article is the second in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DApp Frontend Security">
-<meta property="og:url" content="https://framework.embarklabs.io/news/2020/01/30/dapp-frontend-security/index.html">
+<meta property="og:url" content="https://framework.embarklabs.io/news/2020/01/29/dapp-frontend-security/index.html">
 <meta property="og:site_name" content="Embark">
-<meta property="og:description" content="IntroductionThis article is the second in my series of articles based on the frontend of the decentralised web.  We’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side, frontend se">
+<meta property="og:description" content="This article is the second in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://framework.embarklabs.io/assets/images/web3-article-header.png">
 <meta property="og:image" content="https://cdn-media-1.freecodecamp.org/images/1*sd62aH6GGS1RoCR9t4QNyQ.png">
-<meta property="article:published_time" content="2020-01-30T05:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-05T20:45:33.257Z">
+<meta property="article:published_time" content="2020-01-30T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-19T01:36:27.492Z">
 <meta property="article:author" content="Embark">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://framework.embarklabs.io/assets/images/web3-article-header.png">
@@ -232,7 +232,7 @@ svg4everybody();
             <img src="https://avatars1.githubusercontent.com/u/29288325?s=400&v=4" class="c-avatar-small">
           </span>
           <p class="o-flex__item">
-            Written by <a href="https://twitter.com/rbin" target="_blank" rel="noopener" title="Robin Percy on Twitter">Robin Percy</a> on the <time class="u-text-ghost">30th January 2020</time>
+            Written by <a href="https://twitter.com/rbin" target="_blank" rel="noopener" title="Robin Percy on Twitter">Robin Percy</a> on the <time class="u-text-ghost">29th January 2020</time>
           </p>
         </div>
       </div>
@@ -250,9 +250,11 @@ svg4everybody();
 <main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
     <p><img src="/assets/images/web3-article-header.png" alt="Web3.js"></p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><em>This article is the second in my series of articles based on the frontend of the decentralised web.  We’ll look at <a href="/news/2019/12/09/web3-what-are-your-options/">Web3.js</a> &amp; accessing the Ethereum Blockchain client-side, <a href="/news/2020/01/30/dapp-frontend-security/">frontend security for DApps</a>, how WebAssembly has become the “4th language of the web”, and we’ll build a realtime Blockchain explorer app with Phoenix LiveView!</em></p>
-<p>Working for a <a href="https://status.im/security/" target="_blank" rel="noopener">security-focused company like Status</a> means that security, in its many forms, is mentioned on a daily basis. </p>
-<p>However; outside of <a href="http://status.im" target="_blank" rel="noopener">Status</a> one of the broadest, most important, yet often ignored considerations when deploying and running web applications is the security of the app.  When I use the term <em>security</em>,  I’m not just speaking from a backend perspective, but also of the frontend of the application.  Having good infrastructure security is highly important, but there are also security factors on the frontend of the application that we really <em>must</em> take into account.</p>
+<blockquote>
+<p><em>This article is the second in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at <a href="/news/2019/12/09/web3-what-are-your-options/">Web3.js</a> &amp; accessing the Ethereum Blockchain client-side, <a href="/news/2020/01/30/dapp-frontend-security/">frontend security for DApps</a>, how <a href="/news/2020/02/18/wasm-ewasm-what-and-why/">eWasm / WebAssembly</a> has become the “4th language of the web”, and we’ll build a realtime Blockchain explorer app with Phoenix LiveView!</em></p>
+</blockquote>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Working for a <a href="https://status.im/security/" target="_blank" rel="noopener">security-focused company like Status</a> means that security, in its many forms, is mentioned on a daily basis. </p>
+<p>However; outside of <a href="http://status.im" target="_blank" rel="noopener">Status</a> one of the broadest, most important, yet <em>often ignored</em> considerations when deploying and running web applications is the security of the app.  When I use the term <em>security</em>,  I’m not just speaking from a backend perspective, but also of the frontend of the application.  Having good infrastructure security is highly important, but there are also security factors on the frontend of the application that we really <em>must</em> take into account.</p>
 <p>Security is an ongoing, and ever-changing, practice that you must observe to ensure that your product is never included in the companies that one hears about on the news after a huge data breach. Regardless of which programming paradigm, language or framework you wish to use, there are plenty of non-specific, terse security practices you should follow from the very start of the project.</p>
 <p>In my last personal Startup, we provided User Authentication as a Service, so we were a major target for hackers. On one of our first evenings live, we watched someone attempt to send 5million malicious requests within 30 minutes. None of which had any affect other than exposing the hacker. This is because we made security a priority — which is something we all need to do in the modern world of Tech.</p>
 <p>In this article, I’ll introduce you to my biggest tips for top to bottom (Frontend to Backend) security for your web applications.  We’ll take a look at security for your DApps too!</p>

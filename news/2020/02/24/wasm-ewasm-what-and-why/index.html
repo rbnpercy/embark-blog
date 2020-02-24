@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Embark</title>
+  <title>WebAssembly / eWasm – What, and Why? | Embark</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://framework.embarklabs.io/archives/2019/index.html">
+  <link rel="canonical" href="https://framework.embarklabs.io/news/2020/02/24/wasm-ewasm-what-and-why/index.html">
   <!-- Alternative links -->
   
 
@@ -147,23 +147,27 @@
 
 svg4everybody();
 </script>
-<meta name="description" content="Embark is a simple &amp; powerful framework for decentralized applications">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Embark">
-<meta property="og:url" content="https://framework.embarklabs.io/archives/2019/index.html">
+<meta name="description" content="This article is the third in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side, f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebAssembly &#x2F; eWasm – What, and Why?">
+<meta property="og:url" content="https://framework.embarklabs.io/news/2020/02/24/wasm-ewasm-what-and-why/index.html">
 <meta property="og:site_name" content="Embark">
-<meta property="og:description" content="Embark is a simple &amp; powerful framework for decentralized applications">
+<meta property="og:description" content="This article is the third in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at Web3.js &amp; accessing the Ethereum Blockchain client-side, f">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://framework.embarklabs.io/assets/images/eWASM-header.png">
+<meta property="og:image" content="https://framework.embarklabs.io/assets/images/wasm_explorer_online_app.png">
+<meta property="og:image" content="https://framework.embarklabs.io/assets/images/wasm-evm-benchmarks.png">
+<meta property="article:published_time" content="2020-02-24T05:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-24T19:03:23.373Z">
 <meta property="article:author" content="Embark">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://framework.embarklabs.io/assets/images/eWASM-header.png">
 </head>
 
   <body>
 
-    
-  <header role="banner" class="c-header c-header--compact">
-  <span class="c-header__background"></span>
-  <div class="o-container c-header__content">
+    <header role="banner" class="c-header c-header--compact">
+  <div class="o-container">
     <div class="c-header__top">
       <a href="https://embarklabs.io" target="_blank" rel="noopener" title="Embark" class="c-logo c-logo--negative">Embark</a>
       <nav role="navigation" class="c-navigation">
@@ -218,21 +222,25 @@ svg4everybody();
     <div class="c-quick-search o-distance-m u-hidden-large-up">
       <input type="search" id="inp-search" placeholder="Search">
     </div>
+  </div>
+  <div class="o-container-medium">
     <div class="c-header__body">
-      <h1 class="c-title u-text-ghost">All posts</h1>
-
+      <h1 class="c-title u-text-ghost">WebAssembly / eWasm – What, and Why?</h1>
       
-      <p class="c-subtitle o-distance-s">&nbsp;</p>
-      
-
-      
-      <div class="o-buttonbar">
-        
-          <a href="/news" class="c-button o-buttonbar__item" title="Back to blog">Back to blog</a>
-        
-        
-        
+      <div class="o-distance-m">
+        <div class="o-flex o-flex-center">
+          <span class="o-flex__item">
+            <img src="https://avatars1.githubusercontent.com/u/29288325?s=400&v=4" class="c-avatar-small">
+          </span>
+          <p class="o-flex__item">
+            Written by <a href="https://twitter.com/rbin" target="_blank" rel="noopener" title="Robin Percy on Twitter">Robin Percy</a> on the <time class="u-text-ghost">24th February 2020</time>
+          </p>
+        </div>
       </div>
+      
+
+      
+
       
       
     </div>
@@ -240,254 +248,89 @@ svg4everybody();
 </header>
 
 
-
-<main role="main">
+<main role="main" class="o-standard-page">
   <section class="o-container-medium o-distance">
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/12/08/web3-what-are-your-options/" title="Read more" class="u-link-uniform">Introduction to Web3 - What Are Your Options?</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">8th December 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Web3.js is a collection of APIs giving us the ability to interact with, and send commands to, the Ethereum Network from a JavaScript frontend.  In this article, I will go over the basics of what and why we need Web3.js.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/12/08/web3-what-are-your-options/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+    <p><img src="/assets/images/eWASM-header.png" alt="eWasm"></p>
+<blockquote>
+<p><em>This article is the third in my series of articles based on the frontend of the decentralised web.  Throughout the series we’ll look at <a href="/news/2019/12/09/web3-what-are-your-options/">Web3.js</a> &amp; accessing the Ethereum Blockchain client-side, <a href="/news/2020/01/30/dapp-frontend-security/">frontend security for DApps</a>, how <a href="/news/2020/02/18/wasm-eWasm-what-and-why/">eWasm / WebAssembly</a> has become the “4th language of the web”, and we’ll build a realtime Blockchain explorer app with Phoenix LiveView!</em></p>
+</blockquote>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>As I mentioned in the foreword of this article series; I read recently that WebAssembly (<em>Wasm</em>) has become the <em>4th language for the decentralised web</em>, and as I took time to really consider that notion, I came up with some points both for, and against it.</p>
+<p>WebAssembly is a way of taking code written in programming languages other than JavaScript and running that code in the browser.</p>
+<p>Basically; Wasm can be summarised as an <strong><em>efficient</em></strong> binary format.  This binary format serves as a compilation target, which can be compiled to <strong>execute at native speed</strong>, by taking advantage of common hardware capabilities available over a range of platforms – including mobile and IoT.</p>
+<p>Today, I’d like to show you what I’ve discovered about <em>Wasm</em>, and in keeping with my  <strong>decentralised web frontend</strong> series; in particular – <a href="https://eWasm.readthedocs.io/en/mkdocs/" target="_blank" rel="noopener"><strong>eWasm</strong> (Web Assembly for Ethereum)</a>.</p>
+<blockquote>
+<p><strong><em>‘Ethereum flavoured WebAssembly is a proposed redesign of the Ethereum Smart Contract execution layer using a deterministic subset of WebAssembly.’</em></strong></p>
+</blockquote>
+<h2 id="Firstly-Wasm-Goals"><a href="#Firstly-Wasm-Goals" class="headerlink" title="Firstly; Wasm Goals"></a>Firstly; Wasm Goals</h2><p>The original design goals of WebAssembly are the following:</p>
+<ul>
+<li>Fast: executes with near native code performance, taking advantage of capabilities common to all contemporary hardware.</li>
+<li>Safe: code is validated and executes in a memory-safe, sandboxed environment preventing data corruption or security breaches.</li>
+<li>Well-defined: fully and precisely defines valid programs and their behaviour in a way that is easy to reason about informally and formally.</li>
+<li>Hardware-independent: can be compiled on all modern architectures, desktop or mobile devices and embedded systems alike.</li>
+<li>Language-independent: does not privilege any particular language, programming model, or object model.</li>
+<li>Platform-independent: can be embedded in browsers, run as a stand-alone VM, or integrated in other environments.</li>
+<li>Open: programs can interoperate with their environment in a simple and universal manner.</li>
+</ul>
+<p>As far as I can see, Wasm has indeed achieved the above goals.</p>
+<h2 id="How-Wasm-Works"><a href="#How-Wasm-Works" class="headerlink" title="How Wasm Works"></a>How Wasm Works</h2><p>WebAssembly delivers significant performance gains because modern browser engines can parse and execute its binary format an order of magnitude faster than vanilla JavaScript itself.  So; you can take C/C++ code, translate it into Wasm using a compiler tool, and load the generated Wasm module into a JavaScript app, where it will be executed by the browser.</p>
+<p><img src="/assets/images/wasm_explorer_online_app.png" alt="wasm editor"></p>
+<p>From what I’ve read, I believe one of the biggest ideas behind Wasm; is to make it possible to run media-rich game engines, and support such graphics-heavy games in-browser, without the use of plug-ins. It also has non-web applications such as the Internet of Things, mobile apps and JavaScript virtual machines.</p>
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/MaJCfdmr9Wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>If you want to get started with Wasm, you can download a precompiled toolchain to compile C/C++ to WebAssembly by running the following:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/emscripten-core/emsdk.git</span><br><span class="line">$ <span class="built_in">cd</span> emsdk</span><br><span class="line">$ ./emsdk install latest</span><br><span class="line">$ ./emsdk activate latest</span><br></pre></td></tr></table></figure>
 
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/" title="Read more" class="u-link-uniform">Nim vs Crystal - Part 3 - Crypto, DApps & P2P</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th November 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Crystal and Nim go head-to-head to figure out the best modern, low-level programming language!  In part 3; Crypto, P2P & DApps are explored.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/11/28/nim-vs-crystal-part-3-cryto-dapps-p2p/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
+<h2 id="Wasm-to-eWasm-Ethereum-flavoured-WebAssembly"><a href="#Wasm-to-eWasm-Ethereum-flavoured-WebAssembly" class="headerlink" title="Wasm to eWasm (Ethereum flavoured WebAssembly)"></a>Wasm to eWasm (Ethereum flavoured WebAssembly)</h2><p>Great! &nbsp; Now that we have Wasm introduced, explained, and out-of-the-way, we can move onto the (arguably) more important topic – <strong><em>eWasm</em></strong>!  So.. what exactly is eWasm?</p>
+<p>Simply put; eWasm is a restricted subset of Wasm to be used for Smart Contracts in Ethereum.  Much like Wasm, one of the biggest goals of eWasm is to be fast &amp; efficient.  To truly distinguish Ethereum as the *”World Computer”,* we need to have a super performant VM. The current architecture of the VM is one of the greatest blockers to raw performance.  </p>
+<p>As I mentioned in the Wasm section above; WebAssembly aims to execute at near native speed by taking advantage of common hardware capabilities available on a wide range of platforms. This will open the door for Ethereum to a wide array of uses that require performance/throughput.</p>
+<p>Security is another key goal.  With the added performance gains from eWasm we will be able to implement parts of Ethereum such as the precompiled Smart Contract in the VM itself which will minimise our trusted computing base.  WebAssembly is currently being designed as an open standard by a W3C Community Group and is actively being developed by engineers from Mozilla, Google, Microsoft, and Apple.</p>
+<h2 id="eWasm-Goals"><a href="#eWasm-Goals" class="headerlink" title="eWasm Goals"></a>eWasm Goals</h2><p>Goals of the eWasm project:</p>
+<ul>
+<li>To provide a specification of eWasm Smart Contract semantics and the Ethereum interface.</li>
+<li>To provide an EVM transcompiler, preferably as an eWasm Smart Contract.</li>
+<li>To provide a VM implementation for executing eWasm Smart Contracts.</li>
+<li>To implement an eWasm backend in the Solidity compiler.</li>
+<li>To provide a library and instructions for writing Smart Contracts in Rust.</li>
+<li>To provide a library and instructions for writing Smart Contracts in C.</li>
+<li>To provide a <em>metering injector*</em>, preferably as an eWasm Smart Contract.</li>
+</ul>
+<p><em>*Metering injector</em> is a transformation tool inserting metering code to an eWasm Smart Contract.</p>
+<p><strong>Toolchain Compatibility:</strong> A LLVM front-end for Wasm is part of the MVP. This will allow developers to write Smart Contracts and reuse applications written in common languages such as C/C++, go and rust.</p>
+<p><strong>Portability</strong>: Wasm is targeted to be deployed in all the major web browsers which will result in it being one of the most widely deployed VM architecture. Smart Contracts compiled to eWasm will share compatibility with any standard Wasm environment. Which will make running a program either directly on Ethereum, on a cloud hosting environment, or on one’s local machine - a frictionless process.</p>
+<p><strong>Optional And Flexible Metering:</strong> Metering the VM adds overhead but is essential for running untrusted code. If code is trusted, then metering maybe optional. eWasm defines metering as an optional layer to accommodate for these usecases.</p>
+<h2 id="eWasm-Performance"><a href="#eWasm-Performance" class="headerlink" title="eWasm Performance"></a>eWasm Performance</h2><p>This chart shows the Wasm-based EVM setting new performance records in a typical   sha1 benchmark experiment.  It is shown here against <em>Evmone</em> (a C++ implementation) and <em>Cita-vm</em> (a rust implementation).</p>
+<p><img src="/assets/images/wasm-evm-benchmarks.png" alt="Wasm EVM benchmarking">  </p>
+<p>I took this benchmark directly from the eWasm GitHub, I didn’t run the tests myself. You can find the full details, alongside more benchmark testing <a href="https://github.com/eWasm/benchmarking#sha1" target="_blank" rel="noopener">here.</a></p>
+<h2 id="eWasm-and-Embark"><a href="#eWasm-and-Embark" class="headerlink" title="eWasm and Embark"></a>eWasm and Embark</h2><p>With Status / Embark being at the forefront of Decentralised technology; naturally we are very on-board with eWasm and the improvements it brings to the EVM.</p>
+<p>Check out two of our extremely talented engineers; <a href="https://twitter.com/PascalPrecht" target="_blank" rel="noopener">Pascal</a> and <a href="https://twitter.com/ericmastro" target="_blank" rel="noopener">Eric</a> giving about eWasm at Devcon 5:</p>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/t2LgFXxcFtc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/" title="Read more" class="u-link-uniform">Nim vs Crystal - Part 2 - Threading & Tooling</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">21st November 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Crystal and Nim go head-to-head to figure out the best modern, low-level programming language!  In part 2, Threading & Tooling  are reviewed.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/11/21/nim-vs-crystal-part-2-threading-tooling/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
 
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Since its launch a couple of years ago; <em>Wasm</em> has grown from an impressive concept into an even-more-impressive piece of technology.  Alongside which a flourishing community has grown.  </p>
+<p>Although, personally, I have my reservations in agreeing with the statement that <em>Wasm</em> is the “most significant new technology to come to the web platform in a decade”…   It definitely <strong>is</strong> impressive, and I can certainly see how &amp; why it has made a good impact, and does have a lot of devs working on relative tooling and implementations.  This was an interesting (albeit old) article I just stumbled across this morning:  <a href="https://medium.com/perlin-network/life-a-secure-blazing-fast-cross-platform-webassembly-vm-in-go-ea3b31fa6e09" target="_blank" rel="noopener">Life: A secure, blazing-fast, cross-platform WebAssembly VM in Go.</a></p>
+<p>Between Wasm &amp; eWasm, I’m excited to see the performance boosts we can achieve as they grow, and as our own DApp development grows.  I’d love to find an excuse to build out a big piece of technology with eWasm, but this <em>would</em> be a big project that I just don’t have time for right now!</p>
+<p>Thanks again for reading my series on DApp frontend.  The next (and unfortunately) final article in the series will be released next week, and is sure to be a <strong>real humdinger!</strong>  We’ll be building a realtime crypto/blockchain tracker app using Elixir &amp; <a href="https://www.phoenixframework.org/" target="_blank" rel="noopener">Phoenix’s</a> newly popular <a href="https://github.com/phoenixframework/phoenix_live_view" target="_blank" rel="noopener">LiveView!</a></p>
+<p><a href="https://twitter.com/rbin" target="_blank" rel="noopener"> <strong>- @rbin</strong></a></p>
 
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/" title="Read more" class="u-link-uniform">Nim vs Crystal - Part 1 - Performance & Interoperability</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">18th November 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Crystal and Nim go head-to-head to figure out the best modern, low-level programming language!  In part 1, Performance & Interoperability are reviewed.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/11/18/nim-vs-crystal-part-1-performance-interoperability/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/07/23/whats-new-in-embark-4.1/" title="Read more" class="u-link-uniform">What's new in Embark 4.1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">23rd July 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 4.1 is out and in this article we'll be looking into some of new features.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/07/23/whats-new-in-embark-4.1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/03/19/introducing-embark-4/" title="Read more" class="u-link-uniform">Introducing Embark 4.0 - Cockpit, Debugger and more</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">19th March 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Embark 4.0 is finally here! Check out what the greatest release yet has to offer!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/03/19/introducing-embark-4/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/03/18/upgrading-to-embark-4/" title="Read more" class="u-link-uniform">How to upgrade to Embark 4</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">18th March 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">In this guide, we'll learn how to upgrade a Dapp created with Embark 3.x to Embark 4</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/03/18/upgrading-to-embark-4/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/" title="Read more" class="u-link-uniform">Building a decentralized Reddit with Embark - Part 3</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">18th February 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">In this third and last part of the tutorial series about building a decentralized Reddit with Embark, we're building the front-end for our application using React and EmbarkJS.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/02/18/building-a-decentralized-reddit-with-embark-part-3/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/" title="Read more" class="u-link-uniform">Building a decentralized Reddit with Embark - Part 2</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">11th February 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">This is the second part of the three part tutorial about building a decentralized Reddit with Embark. In this part, we'll be focussing on testing our Smart Contract using EmbarkJS.</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/02/11/building-a-decentralized-reddit-with-embark-part-2/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/02/04/building-a-decentralized-reddit-with-embark-part-1/" title="Read more" class="u-link-uniform">Building a decentralized Reddit with Embark - Part 1</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">4th February 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">Ever wanted to know what it needs to build a decentralized equivalent of a social platform like Reddit? In this three part tutorial series we're going to build one from scratch!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/02/04/building-a-decentralized-reddit-with-embark-part-1/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/" title="Read more" class="u-link-uniform">Running Embark tests on a Continuous Integration server</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">28th January 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">In this article we're going to learn how to run tests on a Continuous Integration server like Travis using Embark. Read on for more information!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/01/28/running-embark-tests-on-a-continuous-integration-server/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
-      <div class="c-box c-box--whisper  o-distance-m ">
-  
-  <h3 class="c-title-level-3">
-    
-      <a href="/news/2019/01/23/building-smart-contract-only-dapps/" title="Read more" class="u-link-uniform">Building Smart Contract only DApps with Embark</a>
-    
-  </h3>
-  
-    <p class="c-meta u-text-light">23rd January 2019</p>
-  
-  <p class="c-box__subtitle u-text-light">In this article we're going to explore how to build applications with Embark that focus purely on Smart Contract development. Read on!</p>
-  
-  <p class="c-box__footer">
-    <a href="/news/2019/01/23/building-smart-contract-only-dapps/" title="Read more" class="c-link">Read more</a>
-  </p>
-  
-</div>
-
-
-    
   </section>
-  <div class="o-container o-distance o-center">
-    <a href="/news" class="c-button" title="Back to blog">Back to blog</a>
+  
+  
+
+  <div class="o-container-medium o-distance">
+    <div class="o-flex o-flex-space-between">
+  
+  <div class="o-flex__item">
+    <a href="/news/2020/02/19/embark-5-2-release/" class="c-button c-button--quite" title="Previous article">Previous</a>
   </div>
+  
+  
+</div>
+
+
+  </div>
+  
 </main>
 
 
