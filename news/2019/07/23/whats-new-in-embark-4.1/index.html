@@ -219,7 +219,7 @@ svg4everybody();
       <input type="search" id="inp-search" placeholder="Search">
     </div>
   </div>
-  <div class="o-container-medium">
+  <div class="o-container">
     <div class="c-header__body">
       <h1 class="c-title u-text-ghost">What's new in Embark 4.1</h1>
       
@@ -245,7 +245,7 @@ svg4everybody();
 
 
 <main role="main" class="o-standard-page">
-  <section class="o-container-medium o-distance">
+  <section class="o-container o-distance">
     <p>After four months of development we’re happy to tell you that we’ve released Embark 4.1 which comes with tons of bug fixes and a lot of new features. In this post we’ll take a closer look at some of these features, however as always, we recommend having a look at our <a href="https://github.com/embarklabs/embark/blob/master/CHANGELOG.md" target="_blank" rel="noopener">change log</a> to get a more detailed overview of what has landed in Embark’s latest release. Let’s get right to it!</p>
 <h2 id="New-beforeDeploy-hook"><a href="#New-beforeDeploy-hook" class="headerlink" title="New beforeDeploy hook"></a>New <code>beforeDeploy</code> hook</h2><p>In Embark 4, we’ve introduced a handful of new <a href="https://framework.embarklabs.io/docs/contracts_configuration.html#Deployment-hooks" target="_blank" rel="noopener">deployment hooks</a> and with 4.1, we’re expanding the APIs from there. The new <code>beforeDeploy</code> hook lets you run an action either before all of your Smart Contracts are getting deployed, or, selectively for a subset of them.</p>
 <p>Very similar to the existing deployment hooks, <code>beforeDeploy</code> is an asynchronous function that returns a promise and has access to a context object that provides dependencies that your function may or may not be interested in. Adding a <code>beforeDeploy</code> hook that runs before your Smart Contracts are being deployed is as simple as adding it to the <code>contracts</code> configuration like this:</p>
@@ -278,10 +278,10 @@ svg4everybody();
 <p>Stay tuned with latest changes happening in Embark by <a href="https://github.com/embarklabs/embark" target="_blank" rel="noopener">watching our GitHub repository</a> and following us on <a href="https://twitter.com/EmbarkProject" target="_blank" rel="noopener">Twitter</a>!</p>
 
   </section>
-  
+
   
 
-  <div class="o-container-medium o-distance">
+  <div class="o-container o-distance">
     <div class="o-flex o-flex-space-between">
   
   <div class="o-flex__item">
@@ -341,7 +341,7 @@ svg4everybody();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
       const EMBARK_DOC_VERSIONS = {
-        'latest': 'https://framework.embarklabs.io/docs','3.2': 'https://5ca4e0fdb29712000adde37f--embark-site-versions.netlify.com/docs/'
+        
       };
     </script>
 
